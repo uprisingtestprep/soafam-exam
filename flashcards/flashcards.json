@@ -1,0 +1,3002 @@
+[
+  {
+    "front": "What is the key structural difference between short-term insurance and long-term life insurance?",
+    "back": "A short-term policy covers a fixed short period and can generate zero, one, or many separate loss events during that period, while a long-term life insurance policy pays a single benefit once, at death, which may occur decades after the policy was sold.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 1
+  },
+  {
+    "front": "Define per-occurrence loss (X) versus aggregate loss (S).",
+    "back": "The per-occurrence loss X is the dollar amount of one single loss event. The aggregate loss S is the sum of all per-occurrence losses that happen to a policy or portfolio during the coverage period.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 2
+  },
+  {
+    "front": "What does the notation X \u2227 k mean?",
+    "back": "X \u2227 k means the minimum of X and k, that is min(X, k). It equals X when X is below k and freezes at the constant k once X reaches or exceeds k.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 3
+  },
+  {
+    "front": "Give the formula for the insurer's payment under an ordinary deductible d, for a loss X.",
+    "back": "Payment = X \u2212 d if X > d, and Payment = 0 if X \u2264 d. Equivalently, Payment = X \u2212 (X \u2227 d).",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 4
+  },
+  {
+    "front": "Give the formula for the insurer's payment under a franchise deductible d, for a loss X.",
+    "back": "Payment = 0 if X \u2264 d, and Payment = X (the full loss, not X minus d) if X > d.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 5
+  },
+  {
+    "front": "How does a franchise deductible differ from an ordinary deductible once the loss exceeds the deductible amount?",
+    "back": "An ordinary deductible still subtracts d from the payment, so the payment rises smoothly from zero as X crosses d. A franchise deductible pays the entire loss once X exceeds d, creating a sudden jump in the payment at that point.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 6
+  },
+  {
+    "front": "What is the 'maximum covered loss' u in Klugman's notation, and how does it differ from the 'policy limit'?",
+    "back": "u is the loss amount at which the policy's payment stops increasing. The maximum payment the policy will ever make (often called the policy limit in plain English) is u minus the deductible d, not u itself.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 7
+  },
+  {
+    "front": "Write the combined formula for the insurer's payment Y with deductible d, maximum covered loss u, and coinsurance \u03b1.",
+    "back": "Y = \u03b1 \u00d7 [(X \u2227 u) \u2212 (X \u2227 d)], where the loss is first capped at u, then the deductible-capped amount is subtracted, and the result is multiplied by the coinsurance factor.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 8
+  },
+  {
+    "front": "What does a coinsurance factor \u03b1 represent in a short-term insurance policy?",
+    "back": "\u03b1 is the fixed percentage (0 < \u03b1 \u2264 1) of the covered loss (after deductible and limit) that the insurer pays; the policyholder retains the remaining (1 \u2212 \u03b1) portion as shared risk.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 9
+  },
+  {
+    "front": "A policy has deductible d = 500, maximum covered loss u = 25,500, and coinsurance \u03b1 = 0.75. A loss of X = 10,000 occurs. What does the insurer pay?",
+    "back": "Payment = 0.75 \u00d7 [(10,000 \u2227 25,500) \u2212 (10,000 \u2227 500)] = 0.75 \u00d7 (10,000 \u2212 500) = 0.75 \u00d7 9,500 = $7,125.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 10
+  },
+  {
+    "front": "Using the same policy (d = 500, u = 25,500, \u03b1 = 0.75), what does the insurer pay on a loss of X = 40,000?",
+    "back": "Payment = 0.75 \u00d7 [(40,000 \u2227 25,500) \u2212 (40,000 \u2227 500)] = 0.75 \u00d7 (25,500 \u2212 500) = 0.75 \u00d7 25,000 = $18,750, the maximum possible payment under this coinsurance rate.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 11
+  },
+  {
+    "front": "Define the loss elimination ratio (LER) for a single loss X and deductible d.",
+    "back": "LER = (X \u2227 d) / X, the fraction of the loss that the deductible removes from the insurer's obligation.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 12
+  },
+  {
+    "front": "What happens to the loss elimination ratio as the deductible d increases, holding the loss distribution fixed?",
+    "back": "The loss elimination ratio increases, since a larger deductible removes a larger dollar amount, though it rises more slowly once d already exceeds most losses in the portfolio.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 13
+  },
+  {
+    "front": "A loss of X = 40,000 has a deductible of d = 500. What is the loss elimination ratio contributed by the deductible alone?",
+    "back": "LER = 500 / 40,000 = 0.0125, or 1.25%.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 14
+  },
+  {
+    "front": "How does raising a deductible affect the insurer's expected payment and the variance of that payment?",
+    "back": "Raising the deductible reduces both the expected payment and its variance, because the insurer no longer bears the small, frequent losses that drive much of the fluctuation in claim payments.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 15
+  },
+  {
+    "front": "How does coinsurance affect the variance of the insurer's payment, compared to a deductible or limit?",
+    "back": "Coinsurance scales the payment by a constant factor \u03b1, so it scales the variance of the payment by \u03b1 squared, leaving the underlying shape of the loss distribution unchanged. A deductible or limit changes the shape as well as the scale.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 16
+  },
+  {
+    "front": "What is the purpose of reinsurance, and what is the ceding company?",
+    "back": "Reinsurance lets an insurance company transfer part of the risk it has accepted from its own policyholders to a second company, the reinsurer. The original insurer, in this transaction, is called the ceding company.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 17
+  },
+  {
+    "front": "What is the difference between proportional and non-proportional reinsurance?",
+    "back": "Proportional reinsurance splits every loss by a fixed percentage regardless of its size. Non-proportional reinsurance uses a dollar threshold, and the reinsurer only responds once losses cross that threshold.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 18
+  },
+  {
+    "front": "Define quota share reinsurance.",
+    "back": "Quota share reinsurance cedes a fixed fraction c of every loss to the reinsurer, with the insurer retaining the remaining fraction (1 \u2212 c), applied uniformly across the whole book of business.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 19
+  },
+  {
+    "front": "An insurer has a 40% quota share treaty and experiences a loss of $500,000. How much does the reinsurer pay and how much does the insurer retain?",
+    "back": "Reinsurer pays 0.40 \u00d7 500,000 = $200,000. Insurer retains 0.60 \u00d7 500,000 = $300,000. The two amounts sum to the original $500,000 loss.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 20
+  },
+  {
+    "front": "Define surplus share reinsurance.",
+    "back": "Surplus share reinsurance is proportional, but the cession percentage is set separately for each policy based on that policy's total sum insured relative to the insurer's retention limit (line), rather than being one fixed rate for the whole book.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 21
+  },
+  {
+    "front": "Under a surplus share treaty with retention line L, how is the insurer's retained fraction calculated for a policy with total sum insured F (where F > L)?",
+    "back": "The insurer retains the fraction L / F of every loss on that policy, and cedes the remaining fraction (F \u2212 L) / F, called the surplus, to the reinsurer.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 22
+  },
+  {
+    "front": "What happens under a surplus share treaty if a policy's total sum insured F is less than or equal to the retention line L?",
+    "back": "The insurer keeps the entire policy and cedes nothing to the reinsurer under the surplus treaty, since the policy does not exceed the retention line.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 23
+  },
+  {
+    "front": "An insurer sets a retention line of $100,000. A policy has a total sum insured of $400,000. What is the insurer's retained fraction for this policy?",
+    "back": "Retained fraction = 100,000 / 400,000 = 0.25 (25%). The ceded fraction is 300,000 / 400,000 = 0.75 (75%).",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 24
+  },
+  {
+    "front": "Using the surplus share example (retention line $100,000, sum insured $400,000, retained fraction 25%), a loss of $120,000 occurs on this policy. What does the insurer retain and what does the reinsurer pay?",
+    "back": "Insurer retains 0.25 \u00d7 120,000 = $30,000. Reinsurer pays 0.75 \u00d7 120,000 = $90,000. The two amounts sum to the $120,000 loss.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 25
+  },
+  {
+    "front": "What is per-occurrence excess-of-loss reinsurance, and how are the retention M and layer limit L defined?",
+    "back": "It is non-proportional reinsurance applied separately to each loss event. The insurer sets a retention (attachment point) M, and the reinsurer's layer covers losses from M up to M + L, where L is the width of the layer.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 26
+  },
+  {
+    "front": "Give the formula for the amount ceded to the reinsurer under per-occurrence excess-of-loss reinsurance with retention M and layer limit L, for a loss X.",
+    "back": "Ceded = min(max(X \u2212 M, 0), L). The insurer retains the loss minus this ceded amount.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 27
+  },
+  {
+    "front": "Under excess-of-loss reinsurance with retention M = 200,000 and layer limit L = 800,000, a loss of X = 650,000 occurs. How much is ceded and how much is retained?",
+    "back": "Ceded = min(max(650,000 \u2212 200,000, 0), 800,000) = min(450,000, 800,000) = $450,000. Retained = 650,000 \u2212 450,000 = $200,000.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 28
+  },
+  {
+    "front": "Under the same excess-of-loss treaty (M = 200,000, L = 800,000), a much larger loss of X = 1,300,000 occurs. How much is ceded and how much is retained?",
+    "back": "Ceded = min(max(1,300,000 \u2212 200,000, 0), 800,000) = min(1,100,000, 800,000) = $800,000 (the full layer). Retained = 1,300,000 \u2212 800,000 = $500,000.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 29
+  },
+  {
+    "front": "Why does the insurer's retained loss increase again once a loss exceeds the top of the excess-of-loss reinsurance layer (M + L)?",
+    "back": "Because the reinsurance layer is exhausted once the loss exceeds M + L; the reinsurer's payment is capped at L, so any loss amount above M + L reverts to being the insurer's own responsibility.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 30
+  },
+  {
+    "front": "What is aggregate excess-of-loss (stop-loss) reinsurance, and how does it differ from per-occurrence excess-of-loss reinsurance?",
+    "back": "Stop-loss reinsurance applies the same excess-of-loss formula, but to the aggregate loss S for the whole portfolio over the period, rather than to each individual loss separately, protecting against many moderate losses accumulating into an unexpectedly large total.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 31
+  },
+  {
+    "front": "Give the formula for the reinsurer's payment under stop-loss reinsurance with aggregate retention M and aggregate limit L, applied to aggregate loss S.",
+    "back": "Reinsurer's payment = min(max(S \u2212 M, 0), L). The insurer keeps the rest of the aggregate loss.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 32
+  },
+  {
+    "front": "What arithmetic identity should always hold true between gross loss, ceded loss, and retained loss under any reinsurance structure?",
+    "back": "Ceded loss plus retained loss must always equal the gross loss exactly; this is a useful check on any reinsurance calculation, since a mistake in either figure usually shows up as a mismatch when the two are added back together.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 33
+  },
+  {
+    "front": "Why is excess-of-loss reinsurance considered better than quota share at controlling an insurer's worst-case exposure to a single catastrophic loss?",
+    "back": "Excess-of-loss reinsurance leaves the insurer fully exposed only up to the retention M and transfers everything above that point (up to the layer limit), directly targeting the extreme tail, while quota share only ever removes a fixed fraction, leaving the insurer still exposed to a fixed percentage of even the largest losses.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 34
+  },
+  {
+    "front": "Why is quota share considered better than excess-of-loss reinsurance at reducing an insurer's overall volume of risk?",
+    "back": "Quota share removes a fixed percentage from every loss, big or small, so it reduces exposure uniformly across the whole distribution, including the ordinary, everyday losses that excess-of-loss reinsurance does not touch at all since they typically fall below the retention.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 35
+  },
+  {
+    "front": "When a policy question combines a deductible, limit, and coinsurance with a reinsurance treaty, in what order should the two layers be applied?",
+    "back": "First calculate what the direct insurance policy pays the policyholder using Y = \u03b1 \u00d7 [(X \u2227 u) \u2212 (X \u2227 d)]. Then apply the reinsurance structure to that already-calculated insurer payment, since the insurer is reinsuring its own payment, not the raw underlying loss.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 36
+  },
+  {
+    "front": "A loss of X = 300 occurs on a policy with deductible d = 500. What does the insurer pay, and why?",
+    "back": "The insurer pays $0, because the loss is below the deductible, so both X \u2227 u and X \u2227 d equal 300, and their difference is zero before coinsurance is even applied.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 37
+  },
+  {
+    "front": "In what fixed order should the deductible-limit-coinsurance formula be evaluated to avoid common arithmetic mistakes?",
+    "back": "First cap the loss at the maximum covered loss u, then subtract the loss capped at the deductible d, and only then multiply the result by the coinsurance factor \u03b1.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 38
+  },
+  {
+    "front": "What clue in a reinsurance question signals that proportional reinsurance (rather than excess-of-loss) is being described?",
+    "back": "A fixed percentage applied to every loss regardless of size signals proportional reinsurance (quota share or surplus share); a dollar threshold plus a layer width signals excess-of-loss reinsurance instead.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 39
+  },
+  {
+    "front": "Why does a fixed-dollar deductible eliminate a shrinking percentage of larger and larger losses?",
+    "back": "Because the loss elimination ratio for the deductible alone is d divided by X, and as X grows while d stays fixed, that ratio (d/X) gets smaller, so the deductible accounts for an ever-smaller share of bigger losses.",
+    "domain": "short_term_insurance_and_reinsurance_coverages",
+    "id": 40
+  },
+  {
+    "front": "In the collective risk model, what is the formula for aggregate loss S?",
+    "back": "S = X_1 + X_2 + ... + X_N, where N is the frequency (claim count) and each X_i is an iid severity. If N = 0, then S = 0.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 41
+  },
+  {
+    "front": "What does the term 'iid' mean when describing the severities X_1, X_2, ... in the collective risk model?",
+    "back": "Independent and identically distributed: each X_i is independent of the others and all X_i follow the same severity distribution, and N is independent of every X_i.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 42
+  },
+  {
+    "front": "What is the mean and variance of the Poisson(\u03bb) frequency distribution?",
+    "back": "E[N] = \u03bb and Var(N) = \u03bb. Mean equals variance, which is why the Poisson has no overdispersion or underdispersion.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 43
+  },
+  {
+    "front": "What is the probability function of the Poisson(\u03bb) distribution?",
+    "back": "p_k = P(N = k) = (e^{-\u03bb} \u03bb^k) / k! for k = 0, 1, 2, ....",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 44
+  },
+  {
+    "front": "What is the mean and variance of the binomial(m,q) frequency distribution?",
+    "back": "E[N] = mq and Var(N) = mq(1-q). Since 1-q < 1, the variance is always less than the mean, called underdispersion.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 45
+  },
+  {
+    "front": "What is the mean and variance of the negative binomial(r,\u03b2) frequency distribution?",
+    "back": "E[N] = r\u03b2 and Var(N) = r\u03b2(1+\u03b2). Since (1+\u03b2) > 1, the variance always exceeds the mean, called overdispersion.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 46
+  },
+  {
+    "front": "What is the mean and variance of the geometric(\u03b2) distribution?",
+    "back": "E[N] = \u03b2 and Var(N) = \u03b2(1+\u03b2). The geometric is the special case of the negative binomial with r = 1.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 47
+  },
+  {
+    "front": "What is the (a,b,0) class recursion?",
+    "back": "p_k / p_{k-1} = a + b/k for k = 1, 2, 3, ..., where a and b are constants determined by the distribution and its parameters, and p_0 is given directly.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 48
+  },
+  {
+    "front": "What are the (a,b,0) parameters a and b for the Poisson(\u03bb) distribution?",
+    "back": "a = 0 and b = \u03bb, with p_0 = e^{-\u03bb}.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 49
+  },
+  {
+    "front": "What are the (a,b,0) parameters a and b for the binomial(m,q) distribution?",
+    "back": "a = -q/(1-q) and b = (m+1)q/(1-q), with p_0 = (1-q)^m.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 50
+  },
+  {
+    "front": "What are the (a,b,0) parameters a and b for the negative binomial(r,\u03b2) distribution?",
+    "back": "a = \u03b2/(1+\u03b2) and b = (r-1)\u03b2/(1+\u03b2), with p_0 = (1+\u03b2)^{-r}.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 51
+  },
+  {
+    "front": "What are the (a,b,0) parameters a and b for the geometric(\u03b2) distribution?",
+    "back": "a = \u03b2/(1+\u03b2) and b = 0, with p_0 = 1/(1+\u03b2).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 52
+  },
+  {
+    "front": "How can you tell from the sign of a in the (a,b,0) class whether a frequency distribution is overdispersed or underdispersed?",
+    "back": "a > 0 signals overdispersion (negative binomial, geometric); a < 0 signals underdispersion (binomial); a = 0 signals mean equals variance (Poisson).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 53
+  },
+  {
+    "front": "What is the mean and variance of the exponential(\u03b8) severity distribution?",
+    "back": "E[X] = \u03b8 and Var(X) = \u03b8^2. \u03b8 is both the single parameter and the mean.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 54
+  },
+  {
+    "front": "What is the density function of the exponential(\u03b8) distribution?",
+    "back": "f(x) = (1/\u03b8) e^{-x/\u03b8} for x > 0.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 55
+  },
+  {
+    "front": "What is the memoryless property of the exponential distribution?",
+    "back": "Given a loss has already exceeded amount d, the amount by which it exceeds d still follows the same exponential distribution with the same mean \u03b8.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 56
+  },
+  {
+    "front": "What is the mean and variance of the gamma(\u03b1,\u03b8) severity distribution?",
+    "back": "E[X] = \u03b1\u03b8 and Var(X) = \u03b1\u03b8^2, where \u03b1 is the shape parameter and \u03b8 is the scale parameter.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 57
+  },
+  {
+    "front": "How is the exponential distribution a special case of the gamma distribution?",
+    "back": "When \u03b1 = 1, the gamma(\u03b1,\u03b8) reduces to the exponential(\u03b8).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 58
+  },
+  {
+    "front": "What is the mean of the two-parameter Pareto(\u03b1,\u03b8) distribution, and when does it exist?",
+    "back": "E[X] = \u03b8/(\u03b1-1), which exists only when \u03b1 > 1.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 59
+  },
+  {
+    "front": "What is the variance of the two-parameter Pareto(\u03b1,\u03b8) distribution, and when does it exist?",
+    "back": "Var(X) = \u03b1\u03b8^2 / [(\u03b1-1)^2 (\u03b1-2)], which exists only when \u03b1 > 2.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 60
+  },
+  {
+    "front": "Why is the Pareto distribution the standard choice for liability and catastrophe severity modeling?",
+    "back": "The Pareto has a heavier right tail than the exponential or gamma, assigning meaningfully more probability to very large claims.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 61
+  },
+  {
+    "front": "How are the parameters \u03bc and \u03c3 of a lognormal(\u03bc,\u03c3) distribution defined?",
+    "back": "\u03bc and \u03c3 are the mean and standard deviation of ln(X), the natural log of X, not of X itself.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 62
+  },
+  {
+    "front": "What is the mean of the lognormal(\u03bc,\u03c3) distribution?",
+    "back": "E[X] = e^{\u03bc + \u03c3^2/2}.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 63
+  },
+  {
+    "front": "What is the variance of the lognormal(\u03bc,\u03c3) distribution?",
+    "back": "Var(X) = e^{2\u03bc+\u03c3^2} (e^{\u03c3^2} - 1).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 64
+  },
+  {
+    "front": "What is the mean of the Weibull(\u03b8,\u03c4) distribution?",
+    "back": "E[X] = \u03b8 \u0393(1 + 1/\u03c4), where \u0393 is the gamma function, a continuous extension of the factorial function.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 65
+  },
+  {
+    "front": "What is the variance of the Weibull(\u03b8,\u03c4) distribution?",
+    "back": "Var(X) = \u03b8^2 [\u0393(1 + 2/\u03c4) - \u0393(1 + 1/\u03c4)^2].",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 66
+  },
+  {
+    "front": "How is the exponential distribution a special case of the Weibull distribution?",
+    "back": "When \u03c4 = 1, the Weibull(\u03b8,\u03c4) reduces to the exponential(\u03b8).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 67
+  },
+  {
+    "front": "How does an ordinary deductible d change the frequency of reported claims?",
+    "back": "Only losses exceeding d are ever reported, so if v = P(X > d), the reported frequency N^L is a thinned version of N: when N is (a,b,0) with parameters a and b, N^L is (a,b,0) with the same a but b replaced by v\u00d7b, and p_0 recalculated.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 68
+  },
+  {
+    "front": "If the true underlying claim frequency is Poisson(\u03bb) and a deductible causes only a fraction v of losses to be reported, what is the distribution of the reported frequency?",
+    "back": "Poisson(v\u03bb). Thinning a Poisson frequency by a constant probability v produces another Poisson distribution with mean scaled by v.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 69
+  },
+  {
+    "front": "What is the left-truncated and shifted severity distribution Y^P, and what does it represent?",
+    "back": "Y^P = X - d, given X > d. It represents the amount actually paid per payment, conditional on a payment being made at all.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 70
+  },
+  {
+    "front": "What is the formula for E[Y^P], the expected payment per payment given a deductible d?",
+    "back": "E[Y^P] = E[(X-d)_+] / [1 - F_X(d)], where 1 - F_X(d) is the survival function S_X(d), the probability a loss exceeds d.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 71
+  },
+  {
+    "front": "What is E[(X-d)_+], and how does it differ from E[Y^P]?",
+    "back": "E[(X-d)_+] is the expected payment per loss, averaged across every loss including those below the deductible that pay nothing. E[Y^P] is the expected payment per payment, conditional only on losses that exceed d.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 72
+  },
+  {
+    "front": "What is the formula relating E[(X-d)_+] to the limited expected value E[X \u2227 d]?",
+    "back": "E[(X-d)_+] = E[X] - E[X \u2227 d], where X \u2227 d is the smaller of X and d.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 73
+  },
+  {
+    "front": "If severity X is exponential with mean \u03b8 and a deductible d is applied, what is E[Y^P], the expected payment per payment?",
+    "back": "E[Y^P] = \u03b8, regardless of the size of d. This follows directly from the exponential's memoryless property.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 74
+  },
+  {
+    "front": "What is a policy limit u, and what does it produce mathematically?",
+    "back": "A policy limit u caps the maximum amount an insurer pays on a single claim. It produces a right-censored payment amount Y = X \u2227 u: the full loss is paid below u, and exactly u is paid at or above u.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 75
+  },
+  {
+    "front": "How does right-censoring from a policy limit differ from left-truncation from a deductible?",
+    "back": "A deductible removes information about small losses (never reported at all). A policy limit caps information about large losses (the insurer never learns exactly how large a loss above u was, only that it was at least u).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 76
+  },
+  {
+    "front": "With both a deductible d and a limit u, what is the insurer's payment on a given loss X?",
+    "back": "(X \u2227 u) - (X \u2227 d): zero for losses below d, rising dollar for dollar between d and u, and capped at u - d for losses at or above u.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 77
+  },
+  {
+    "front": "What does coinsurance \u03b1 do to a payment, and in what order should it be applied relative to a deductible and limit?",
+    "back": "Coinsurance \u03b1 proportionally scales the payment: the amount becomes \u03b1 \u00d7 [(X \u2227 u) - (X \u2227 d)]. It should always be applied after the deductible and limit have already determined the covered loss.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 78
+  },
+  {
+    "front": "How does coinsurance \u03b1 affect the mean, standard deviation, and variance of a payment?",
+    "back": "It multiplies the mean and standard deviation by \u03b1, and multiplies the variance by \u03b1^2, since coinsurance is a pure multiplicative scaling.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 79
+  },
+  {
+    "front": "What is the formula for the mean of the aggregate loss S in the collective risk model?",
+    "back": "E[S] = E[N] \u00d7 E[X], the expected number of claims times the expected size of each claim.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 80
+  },
+  {
+    "front": "What is the formula for the variance of the aggregate loss S in the collective risk model?",
+    "back": "Var(S) = E[N] \u00d7 Var(X) + Var(N) \u00d7 E[X]^2.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 81
+  },
+  {
+    "front": "In the aggregate loss variance formula Var(S) = E[N]Var(X) + Var(N)E[X]^2, what does the first term represent?",
+    "back": "The variability in S caused by claim sizes varying around their mean, weighted by how many claims there typically are.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 82
+  },
+  {
+    "front": "In the aggregate loss variance formula Var(S) = E[N]Var(X) + Var(N)E[X]^2, what does the second term represent?",
+    "back": "The variability in S caused by the claim count itself varying, weighted by the square of the average claim size.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 83
+  },
+  {
+    "front": "Why can the variance of an aggregate loss be much larger relative to its mean when frequency is negative binomial rather than Poisson?",
+    "back": "The negative binomial is overdispersed (Var(N) > E[N]), so the Var(N)\u00d7E[X]^2 term in the aggregate variance formula is inflated compared to a Poisson frequency with the same mean.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 84
+  },
+  {
+    "front": "If N is Poisson(\u03bb) and severity is X, what shortcut formula gives Var(S) directly?",
+    "back": "Var(S) = \u03bb \u00d7 E[X^2], since for a Poisson frequency E[N] = Var(N) = \u03bb.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 85
+  },
+  {
+    "front": "Worked example: frequency N is Poisson(\u03bb = 4) and severity X is exponential with \u03b8 = 500. What is E[S]?",
+    "back": "E[S] = E[N] \u00d7 E[X] = 4 \u00d7 500 = 2,000.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 86
+  },
+  {
+    "front": "Worked example: frequency N is Poisson(\u03bb = 4) and severity X is exponential with \u03b8 = 500 (so Var(X) = \u03b8^2 = 250,000). What is Var(S)?",
+    "back": "Var(S) = E[N]Var(X) + Var(N)E[X]^2 = 4\u00d7250,000 + 4\u00d7500^2 = 1,000,000 + 1,000,000 = 2,000,000.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 87
+  },
+  {
+    "front": "Worked example: N is negative binomial with r = 2, \u03b2 = 3. What are E[N] and Var(N)?",
+    "back": "E[N] = r\u03b2 = 2\u00d73 = 6. Var(N) = r\u03b2(1+\u03b2) = 2\u00d73\u00d74 = 24.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 88
+  },
+  {
+    "front": "Worked example: severity X is gamma with \u03b1 = 2, \u03b8 = 100. What are E[X] and Var(X)?",
+    "back": "E[X] = \u03b1\u03b8 = 2\u00d7100 = 200. Var(X) = \u03b1\u03b8^2 = 2\u00d7100^2 = 20,000.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 89
+  },
+  {
+    "front": "Worked example: with N negative binomial (E[N]=6, Var(N)=24) and X gamma (E[X]=200, Var(X)=20,000), what is E[S]?",
+    "back": "E[S] = E[N]\u00d7E[X] = 6\u00d7200 = 1,200.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 90
+  },
+  {
+    "front": "Worked example: with N negative binomial (E[N]=6, Var(N)=24) and X gamma (E[X]=200, Var(X)=20,000), what is Var(S)?",
+    "back": "Var(S) = E[N]Var(X) + Var(N)E[X]^2 = 6\u00d720,000 + 24\u00d7200^2 = 120,000 + 960,000 = 1,080,000.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 91
+  },
+  {
+    "front": "What conditions must hold for the Panjer recursion to compute the full distribution of S?",
+    "back": "Frequency N must belong to the (a,b,0) class, and severity X must be discrete (or discretized onto a grid of equally spaced values).",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 92
+  },
+  {
+    "front": "What is the Panjer recursion formula for f_S(k) when k \u2265 1?",
+    "back": "f_S(k) = [1 / (1 - a f_X(0))] \u00d7 \u03a3_{j=1}^{k} (a + bj/k) f_X(j) f_S(k-j), using the same a and b as the frequency's (a,b,0) class.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 93
+  },
+  {
+    "front": "Why is the Panjer recursion computationally efficient compared to a full convolution of N and X?",
+    "back": "It reuses the (a,b,0) recursive structure of the frequency distribution to build f_S(k) from previously computed, smaller values of f_S, rather than requiring a full convolution.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 94
+  },
+  {
+    "front": "Worked example (Panjer): N is Poisson(\u03bb=2), so a=0 and b=2. What is f_S(0)?",
+    "back": "f_S(0) = P(N=0) = e^{-\u03bb} = e^{-2} \u2248 0.135335, since for the (a,b,0) class p_0 is given directly.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 95
+  },
+  {
+    "front": "Worked example (Panjer): N is Poisson(\u03bb=2) with a=0, severity f_X(1)=0.6, f_X(2)=0.4. What is the simplified recursion formula when a=0?",
+    "back": "f_S(k) = (2/k) \u00d7 \u03a3_{j=1}^{k} j \u00d7 f_X(j) \u00d7 f_S(k-j), since a=0 removes the a-term entirely.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 96
+  },
+  {
+    "front": "Worked example (Panjer): with f_S(0) \u2248 0.135335, f_X(1)=0.6, what is f_S(1)?",
+    "back": "f_S(1) = (2/1)\u00d7[1\u00d7f_X(1)\u00d7f_S(0)] = 2\u00d70.6\u00d70.135335 \u2248 0.162402.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 97
+  },
+  {
+    "front": "Worked example (Panjer): with f_S(0)\u22480.135335, f_S(1)\u22480.162402, f_X(1)=0.6, f_X(2)=0.4, what is f_S(2)?",
+    "back": "f_S(2) = (2/2)\u00d7[1\u00d7f_X(1)\u00d7f_S(1) + 2\u00d7f_X(2)\u00d7f_S(0)] = 0.6\u00d70.162402 + 2\u00d70.4\u00d70.135335 \u2248 0.097441 + 0.108268 = 0.205709.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 98
+  },
+  {
+    "front": "How can a Panjer recursion result for f_S(2) be cross-checked directly for a Poisson(\u03bb=2) frequency with two-point severity f_X(1)=0.6, f_X(2)=0.4?",
+    "back": "By adding the two ways S=2 can occur: P(N=1)\u00d7f_X(2) + P(N=2)\u00d7f_X(1)^2, using P(N=1)=P(N=2)=2e^{-2}\u22480.270671, giving 0.270671\u00d70.4 + 0.270671\u00d70.36 \u2248 0.205710.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 99
+  },
+  {
+    "front": "What is a 'loss' versus a 'claim' or 'payment' in the collective risk model?",
+    "back": "A loss is any event that could trigger a payment. A claim or payment is the amount actually paid after any deductible, limit, or coinsurance provision has been applied.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 100
+  },
+  {
+    "front": "What does the survival function S_X(d) represent in the context of a deductible d?",
+    "back": "S_X(d) = 1 - F_X(d) = P(X > d), the probability a loss exceeds the deductible, also written v.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 101
+  },
+  {
+    "front": "What is the limited expected value E[X \u2227 d]?",
+    "back": "The expected value of X capped at d: E[X \u2227 d] represents the average payment if every loss were subject to a maximum payout of d with no deductible.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 102
+  },
+  {
+    "front": "Why is it common practice to discretize a continuous severity distribution before applying the Panjer recursion?",
+    "back": "The Panjer recursion requires a discrete severity probability function f_X(j); continuous severities are placed onto a grid of equally spaced values so the recursion can be applied in practice.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 103
+  },
+  {
+    "front": "What real-world reason makes the negative binomial a better frequency model than the Poisson for a heterogeneous population?",
+    "back": "When some policyholders are riskier than others in ways the model cannot observe, claim counts are more volatile than a Poisson (mean = variance) would predict; the negative binomial's overdispersion (variance > mean) captures this.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 104
+  },
+  {
+    "front": "In the (a,b,0) class recursion p_k/p_{k-1} = a + b/k, what does the '0' in the class name refer to?",
+    "back": "It signals that the recursion starts at k = 0, with p_0 given directly rather than derived from the a + b/k formula.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 105
+  },
+  {
+    "front": "What is the correct order of operations when a policy has a deductible, a limit, and coinsurance all at once?",
+    "back": "Apply the deductible first, then the limit, then coinsurance last: payment = \u03b1 \u00d7 [(X \u2227 u) - (X \u2227 d)].",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 106
+  },
+  {
+    "front": "Why does N need to be independent of the X_i values in the collective risk model?",
+    "back": "So that how many claims occur does not change the size of any individual claim, which is required for the E[S] and Var(S) formulas to hold.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 107
+  },
+  {
+    "front": "What happens to the reported claim frequency's (a,b,0) parameters a and b when a deductible thins the original frequency N?",
+    "back": "The parameter a stays the same, but b is replaced by v\u00d7b (where v = P(X>d)), and p_0 is recalculated for the thinned distribution.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 108
+  },
+  {
+    "front": "What is the shape parameter role of \u03b1 in the gamma distribution, versus its role in coinsurance?",
+    "back": "In the gamma (and Pareto) distribution, \u03b1 is the shape parameter controlling the distribution's form. In coinsurance, \u03b1 is an unrelated symbol representing the insurer's payment percentage; the two uses must not be confused.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 109
+  },
+  {
+    "front": "Which severity distribution is the standard choice for modeling normal, moderate-sized losses using techniques borrowed from the normal distribution?",
+    "back": "The lognormal distribution, because ln(X) is normally distributed, so normal distribution tables and calculations can be reused directly.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 110
+  },
+  {
+    "front": "What is E[X^2] in terms of E[X] and Var(X), and why is it useful for a Poisson aggregate loss calculation?",
+    "back": "E[X^2] = Var(X) + E[X]^2. It is useful because for Poisson frequency, Var(S) = \u03bb\u00d7E[X^2] is a direct shortcut avoiding separate computation of the two variance terms.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 111
+  },
+  {
+    "front": "Why does an insurer's payment under a deductible-only policy equal E[X] - E[X \u2227 d] on a per-loss basis?",
+    "back": "E[X \u2227 d] represents what the insurer would have paid if payments were capped at d with no deductible; subtracting it from the true mean E[X] isolates exactly the portion of loss exceeding d, which is E[(X-d)_+].",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 112
+  },
+  {
+    "front": "If a Poisson frequency N has \u03bb = 4 and severity X is exponential with \u03b8 = 500, what is Var(X)?",
+    "back": "Var(X) = \u03b8^2 = 500^2 = 250,000, since for the exponential distribution variance equals the mean squared.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 113
+  },
+  {
+    "front": "What is the standard deviation of S when Var(S) = 2,000,000?",
+    "back": "SD(S) = sqrt(2,000,000) \u2248 1,414.21.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 114
+  },
+  {
+    "front": "Which (a,b,0) frequency distribution has b = 0, and what does that mean for its recursion?",
+    "back": "The geometric distribution has b = 0, so its recursion simplifies to p_k/p_{k-1} = a, meaning each probability is a constant multiple of the one before it.",
+    "domain": "severity_frequency_and_aggregate_models",
+    "id": 115
+  },
+  {
+    "front": "What is the method of moments?",
+    "back": "It is an estimation technique that sets sample moments (like the sample mean and sample second moment) equal to the corresponding theoretical moments of the distribution, then solves the resulting equations for the unknown parameters.",
+    "domain": "parametric_estimation",
+    "id": 116
+  },
+  {
+    "front": "For a sample of n observations, what is the first sample moment m1?",
+    "back": "m1 = (1/n) times the sum of the observations, which is simply the sample mean, x-bar.",
+    "domain": "parametric_estimation",
+    "id": 117
+  },
+  {
+    "front": "For a gamma distribution with shape alpha and scale theta, what two equations does the method of moments use?",
+    "back": "Set alpha times theta equal to the sample mean, and alpha times theta squared equal to the sample variance, then solve the two equations together for alpha and theta.",
+    "domain": "parametric_estimation",
+    "id": 118
+  },
+  {
+    "front": "What is a key weakness of the method of moments compared to maximum likelihood?",
+    "back": "It only uses a couple of summary numbers from the sample, so it wastes information, and it has no natural way to incorporate censored or truncated data.",
+    "domain": "parametric_estimation",
+    "id": 119
+  },
+  {
+    "front": "What is the likelihood function L(theta)?",
+    "back": "It is the joint probability, or joint density, of observing the exact sample that was collected, written as a function of the unknown parameter theta, equal to the product of each observation's individual density.",
+    "domain": "parametric_estimation",
+    "id": 120
+  },
+  {
+    "front": "Why do actuaries work with the log-likelihood instead of the likelihood itself?",
+    "back": "Taking logs turns a product of many terms into a sum, which is far easier to differentiate, and since the natural logarithm is increasing, the value of theta that maximizes the log-likelihood also maximizes the likelihood.",
+    "domain": "parametric_estimation",
+    "id": 121
+  },
+  {
+    "front": "What is the likelihood equation?",
+    "back": "It is the equation formed by setting the derivative of the log-likelihood with respect to theta equal to zero, written as the partial derivative of l(theta) with respect to theta equals zero; its solution is the maximum likelihood estimate.",
+    "domain": "parametric_estimation",
+    "id": 122
+  },
+  {
+    "front": "For an exponential distribution with mean theta, what is the MLE of theta given a complete sample?",
+    "back": "The MLE of theta always equals the sample mean, the sum of the observations divided by the sample size n, which is also the method of moments estimator for this particular distribution.",
+    "domain": "parametric_estimation",
+    "id": 123
+  },
+  {
+    "front": "How does the likelihood function change for grouped data reported in intervals?",
+    "back": "Each interval contributes the probability that a claim falls in that interval, found from the difference of the cumulative distribution function at the two interval endpoints, raised to the power of the number of observations in that interval.",
+    "domain": "parametric_estimation",
+    "id": 124
+  },
+  {
+    "front": "What is right-censored data, and how does it change the likelihood contribution?",
+    "back": "Right-censored data occurs when a loss is capped by a policy limit u, so the true amount above u is unknown; instead of a density term, the observation contributes the survival function S(u; theta), the probability the true loss was at least u.",
+    "domain": "parametric_estimation",
+    "id": 125
+  },
+  {
+    "front": "What is left-truncated data, and how does it change the likelihood contribution?",
+    "back": "Left-truncated data occurs when a deductible d means losses below d are never observed; each observed loss contributes the conditional density f(x; theta) divided by S(d; theta), rather than the plain density f(x; theta).",
+    "domain": "parametric_estimation",
+    "id": 126
+  },
+  {
+    "front": "In a small example, an exponential book has one complete claim of 4 and one claim censored at a policy limit of 10. What is the MLE of the mean theta?",
+    "back": "The likelihood is (1/theta) times e to the negative 14 over theta, and solving the likelihood equation gives theta-hat equal to 14, which is much larger than the theta-hat of 4 you would get by wrongly ignoring the censored claim.",
+    "domain": "parametric_estimation",
+    "id": 127
+  },
+  {
+    "front": "What special property of the exponential distribution simplifies left-truncated likelihood calculations?",
+    "back": "The memoryless property means the ratio of the survival function at x plus d to the survival function at d equals the survival function at x alone, so a left-truncated exponential observation behaves like a complete observation of the excess amount over the deductible.",
+    "domain": "parametric_estimation",
+    "id": 128
+  },
+  {
+    "front": "How is the bias of an estimator theta-hat defined?",
+    "back": "Bias(theta-hat) equals E[theta-hat] minus theta, the true parameter, measuring how far the estimator's average value over repeated samples sits from the truth.",
+    "domain": "parametric_estimation",
+    "id": 129
+  },
+  {
+    "front": "What does it mean for an estimator to be unbiased?",
+    "back": "It means Bias(theta-hat) equals zero for every possible true value of theta, so the estimator neither systematically overestimates nor underestimates the parameter.",
+    "domain": "parametric_estimation",
+    "id": 130
+  },
+  {
+    "front": "What does it mean for an estimator to be consistent?",
+    "back": "It means the estimator converges in probability to the true parameter value as the sample size n approaches infinity, so with enough data the estimate is almost certain to land close to the truth.",
+    "domain": "parametric_estimation",
+    "id": 131
+  },
+  {
+    "front": "Can a biased estimator still be consistent?",
+    "back": "Yes; an estimator can have nonzero bias in small samples yet still be consistent, as long as that bias shrinks toward zero as the sample size grows without bound.",
+    "domain": "parametric_estimation",
+    "id": 132
+  },
+  {
+    "front": "What is the formula for mean squared error, and what does it measure?",
+    "back": "MSE(theta-hat) equals Var(theta-hat) plus Bias(theta-hat) squared, combining an estimator's variability and its systematic error into a single number used to compare estimators.",
+    "domain": "parametric_estimation",
+    "id": 133
+  },
+  {
+    "front": "Two estimators have the same MSE for a given true parameter value. What does this tell you about their bias and variance?",
+    "back": "It only tells you the sum of their variance and squared bias is equal; one estimator could be unbiased with high variance while the other is slightly biased with low variance, and MSE alone cannot distinguish the two patterns.",
+    "domain": "parametric_estimation",
+    "id": 134
+  },
+  {
+    "front": "What is the asymptotic normality property of the MLE?",
+    "back": "As the sample size n grows large, the sampling distribution of the MLE theta-hat becomes approximately normal, centered at the true parameter theta, with a variance that can be estimated directly from the sample.",
+    "domain": "parametric_estimation",
+    "id": 135
+  },
+  {
+    "front": "What is the expected (Fisher) information, I(theta)?",
+    "back": "I(theta) equals the negative expected value of the second derivative of the log-likelihood with respect to theta, and it measures how sharply peaked the log-likelihood is around its maximum.",
+    "domain": "parametric_estimation",
+    "id": 136
+  },
+  {
+    "front": "How is the large-sample variance of the MLE approximated using the Fisher information?",
+    "back": "Var(theta-hat) is approximately the reciprocal of the total Fisher information, 1 divided by I(theta), estimated using either the expected information with theta-hat substituted in or the observed information from the sample data directly.",
+    "domain": "parametric_estimation",
+    "id": 137
+  },
+  {
+    "front": "What is the general form of an approximate 95 percent confidence interval for an MLE theta-hat?",
+    "back": "theta-hat plus or minus 1.96 times the square root of the estimated variance of theta-hat, using the standard normal critical value of 1.96 for a 95 percent interval.",
+    "domain": "parametric_estimation",
+    "id": 138
+  },
+  {
+    "front": "For an exponential MLE with theta-hat = 10/3 and n = 3, what is the estimated variance of theta-hat using Var-hat(theta-hat) = theta-hat squared over n?",
+    "back": "Var-hat(theta-hat) equals (10/3) squared divided by 3, which equals 100 divided by 27, approximately 3.7037, giving a standard error of about 1.9245.",
+    "domain": "parametric_estimation",
+    "id": 139
+  },
+  {
+    "front": "What does the delta method let you do, and what is its variance formula?",
+    "back": "The delta method builds a confidence interval for any smooth function g of the MLE by approximating Var(g(theta-hat)) as g prime of theta-hat squared, multiplied by Var(theta-hat), letting you find the standard error of a transformed quantity like a rate or a percentile.",
+    "domain": "parametric_estimation",
+    "id": 140
+  },
+  {
+    "front": "What is the credibility factor Z?",
+    "back": "The weight, between 0 and 1, placed on a risk's own observed experience when blending it with a manual or prior estimate. Z near 1 means the observed data is trusted heavily; Z near 0 means the manual estimate dominates.",
+    "domain": "introduction_to_credibility",
+    "id": 141
+  },
+  {
+    "front": "What is the credibility premium formula?",
+    "back": "Credibility Premium = Z times the observed mean, plus (1 minus Z) times the manual or prior estimate. It is a weighted average of the risk's own data and a broader benchmark.",
+    "domain": "introduction_to_credibility",
+    "id": 142
+  },
+  {
+    "front": "What is the full credibility standard under limited fluctuation credibility?",
+    "back": "n_full = (z_p / k)^2, where z_p is the standard normal quantile for confidence level p and k is the tolerance (for example, within 5% of the true mean). It is the number of expected claims needed before data is treated as fully credible.",
+    "domain": "introduction_to_credibility",
+    "id": 143
+  },
+  {
+    "front": "For a 95% confidence level, what standard normal quantile z_p is used in the full credibility formula?",
+    "back": "z_p is approximately 1.96, since 95% confidence leaves 2.5% in each tail, corresponding to the 97.5th percentile of the standard normal distribution.",
+    "domain": "introduction_to_credibility",
+    "id": 144
+  },
+  {
+    "front": "What is the partial credibility formula in limited fluctuation credibility?",
+    "back": "Z = the square root of (n divided by n_full), where n is the number of claims actually observed and n_full is the full credibility standard. Z is capped at 1.",
+    "domain": "introduction_to_credibility",
+    "id": 145
+  },
+  {
+    "front": "If n_full = 1,536.64 and a risk has observed n = 800 expected claims, what is Z under limited fluctuation credibility?",
+    "back": "Z equals the square root of (800 divided by 1,536.64), which is the square root of 0.52064, approximately 0.7216.",
+    "domain": "introduction_to_credibility",
+    "id": 146
+  },
+  {
+    "front": "What does B\u00fchlmann credibility optimize, compared to limited fluctuation credibility?",
+    "back": "B\u00fchlmann credibility chooses Z as the value minimizing expected squared error, a least squares best linear approximation to the risk's true mean, based on the population's actual variance structure, rather than a chosen confidence level and tolerance.",
+    "domain": "introduction_to_credibility",
+    "id": 147
+  },
+  {
+    "front": "What is the B\u00fchlmann credibility factor formula?",
+    "back": "Z = n / (n + k), where n is the number of observed periods (or exposure units) and k is the B\u00fchlmann k parameter, equal to EPV divided by VHM.",
+    "domain": "introduction_to_credibility",
+    "id": 148
+  },
+  {
+    "front": "What does EPV (Expected Value of the Process Variance) measure?",
+    "back": "How much a single risk's own observations vary from period to period purely due to random chance, even if that risk's true underlying mean never changes. It is the average of the within-class variances across all risk classes.",
+    "domain": "introduction_to_credibility",
+    "id": 149
+  },
+  {
+    "front": "What does VHM (Variance of the Hypothetical Means) measure?",
+    "back": "How much the true underlying means genuinely differ from one risk or risk class to another, after removing the part of the spread caused by ordinary sampling noise.",
+    "domain": "introduction_to_credibility",
+    "id": 150
+  },
+  {
+    "front": "What is the B\u00fchlmann k parameter and how does it affect Z?",
+    "back": "k = EPV / VHM. A larger k (more noise relative to genuine differences between risks) lowers Z for any fixed n, since the risk's own data carries less trustworthy signal.",
+    "domain": "introduction_to_credibility",
+    "id": 151
+  },
+  {
+    "front": "How is EPV estimated from a table of r risk classes each observed for n periods?",
+    "back": "EPV_hat is the average, across all r classes, of each class's own sample variance, computed with divisor n minus 1: EPV_hat = (1/r) times the sum over classes of the within-class sample variance.",
+    "domain": "introduction_to_credibility",
+    "id": 152
+  },
+  {
+    "front": "How is VHM estimated, and why does the formula subtract a bias correction term?",
+    "back": "VHM_hat = [sum of (class mean minus overall mean) squared, divided by (r minus 1)] minus (EPV_hat divided by n). The subtraction removes the part of the spread between class means that is caused by ordinary sampling noise rather than genuine differences between risks.",
+    "domain": "introduction_to_credibility",
+    "id": 153
+  },
+  {
+    "front": "Two classes have annual claim counts of 4, 6, 5 (mean 5) and 2, 3, 4 (mean 3), each with within-class sample variance 1. What is EPV_hat?",
+    "back": "EPV_hat is the average of the two within-class variances: (1 plus 1) divided by 2, which equals 1.",
+    "domain": "introduction_to_credibility",
+    "id": 154
+  },
+  {
+    "front": "Using the same two classes (means 5 and 3, overall mean 4, EPV_hat = 1, n = 3), what is VHM_hat?",
+    "back": "VHM_hat = [(5-4)^2 + (3-4)^2] / (2-1) minus (1/3) = 2 minus 0.3333, which equals approximately 1.6667.",
+    "domain": "introduction_to_credibility",
+    "id": 155
+  },
+  {
+    "front": "With EPV_hat = 1 and VHM_hat = 1.6667, what is the B\u00fchlmann credibility factor Z for a class with n = 3 years of data?",
+    "back": "k = EPV/VHM = 1/1.6667 = 0.6, so Z = n/(n+k) = 3/3.6, which equals approximately 0.8333.",
+    "domain": "introduction_to_credibility",
+    "id": 156
+  },
+  {
+    "front": "What does B\u00fchlmann-Straub credibility generalize about the plain B\u00fchlmann model?",
+    "back": "It allows exposure (the number of policies, insured lives, or other units underlying each observation) to vary across periods and across risk classes, instead of assuming every risk contributes the same amount of exposure.",
+    "domain": "introduction_to_credibility",
+    "id": 157
+  },
+  {
+    "front": "What is the B\u00fchlmann-Straub credibility factor formula for risk class i?",
+    "back": "Z_i = m_i / (m_i + k), where m_i is that class's own total exposure (summed across all its periods) and k = EPV/VHM, exactly as in the plain B\u00fchlmann model.",
+    "domain": "introduction_to_credibility",
+    "id": 158
+  },
+  {
+    "front": "In B\u00fchlmann-Straub credibility, why can two classes with the same k end up with different credibility factors?",
+    "back": "Because Z_i depends on each class's own total exposure m_i. A class with more total exposure earns a higher Z, even if its underlying k (the ratio of EPV to VHM for the population) is identical to another class's.",
+    "domain": "introduction_to_credibility",
+    "id": 159
+  },
+  {
+    "front": "What is a common mistake to avoid when choosing between the limited fluctuation and B\u00fchlmann partial credibility formulas?",
+    "back": "The limited fluctuation formula uses a square root, Z = sqrt(n/n_full), while the B\u00fchlmann formula does not, Z = n/(n+k). Mixing the two formulas up is a common error under exam time pressure.",
+    "domain": "introduction_to_credibility",
+    "id": 160
+  },
+  {
+    "front": "What is the unearned premium reserve (UPR)?",
+    "back": "The portion of collected premium that corresponds to coverage the insurer has not yet provided as of the valuation date. It is a liability because the insurer would owe it back if the policy were cancelled.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 161
+  },
+  {
+    "front": "What is the pro-rata method for earning premium?",
+    "back": "A method that spreads a policy's total premium evenly, day by day, across the length of the policy term, so premium is earned in direct proportion to the passage of time.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 162
+  },
+  {
+    "front": "State the UPR formula.",
+    "back": "UPR = Total Premium x (Months Remaining / Total Term in Months), where months remaining is measured from the valuation date to the policy expiration date.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 163
+  },
+  {
+    "front": "A 12 month policy with premium $2,400 is effective July 1. What is the UPR at December 31 of the same year?",
+    "back": "6 months have elapsed (July through December) and 6 months remain. UPR = $2,400 x (6/12) = $1,200.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 164
+  },
+  {
+    "front": "What is earned premium, and how does it relate to UPR?",
+    "back": "Earned premium is the portion of premium corresponding to coverage already provided. Earned Premium = Total Premium minus UPR, since every dollar of premium is either earned or unearned.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 165
+  },
+  {
+    "front": "What valuation date is used to compute the UPR?",
+    "back": "The date on which the insurer's financial position is being measured. It falls somewhere inside the policy period, and the months remaining are counted from that date to the policy's expiration date.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 166
+  },
+  {
+    "front": "Why do insurers often assume policies are written mid-month when computing UPR for a large block of business?",
+    "back": "It lets a single simplified formula be applied across an entire block of policies with different effective dates, instead of tracking every policy's exact effective date individually.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 167
+  },
+  {
+    "front": "Why is the unearned premium reserve considered a liability?",
+    "back": "Because if the policyholder cancelled the policy immediately, the insurer would be obligated to refund the unearned portion of the premium back to the policyholder.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 168
+  },
+  {
+    "front": "What does IBNR stand for, and what does it represent?",
+    "back": "Incurred But Not Reported. It is the reserve an insurer holds for claims that have already occurred but that the insurer does not yet know about.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 169
+  },
+  {
+    "front": "What is a case reserve, and how does it differ from IBNR?",
+    "back": "A case reserve is an estimate a claims adjuster sets for a claim that has already been reported, based on that claim's specific facts. IBNR instead covers claims the insurer does not yet know about at all, plus further development on known claims.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 170
+  },
+  {
+    "front": "What does IBNER stand for?",
+    "back": "Incurred But Not Enough Reported. It refers to additional development expected on claims that are already known and case-reserved, but whose case reserves will likely prove too low or too high.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 171
+  },
+  {
+    "front": "State the general formula for the unpaid claim estimate.",
+    "back": "Unpaid Claim Estimate = Projected Ultimate Losses minus Paid Losses to Date.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 172
+  },
+  {
+    "front": "State the formula for IBNR in terms of reported losses.",
+    "back": "IBNR = Projected Ultimate Losses minus Reported Losses, where Reported Losses equals Paid Losses plus Case Reserves.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 173
+  },
+  {
+    "front": "What does 'reported losses' mean in a reserving context?",
+    "back": "Reported losses equal paid losses plus case reserves. It is the total amount an insurer currently knows about for a group of claims.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 174
+  },
+  {
+    "front": "Give an example of why a claim might not be reported to an insurer right away.",
+    "back": "A liability claim, such as one arising from a workplace injury, might not surface until a lawsuit is filed years after the event actually occurred.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 175
+  },
+  {
+    "front": "What role do the chain-ladder, Bornhuetter-Ferguson, and expected claims methods play with respect to IBNR?",
+    "back": "They are three different techniques for estimating the projected ultimate loss figure that IBNR is calculated from, each making different tradeoffs between using the insurer's own reported data and outside expected-loss information.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 176
+  },
+  {
+    "front": "What is a loss development triangle?",
+    "back": "A table that organizes cumulative claims data by accident year (rows) and development age (columns), shaped like a triangle because older accident years have data at more ages than the most recent accident year.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 177
+  },
+  {
+    "front": "What is development age?",
+    "back": "The number of months or years that have passed since the start of a given accident year, such as 12 months, 24 months, or 36 months of development.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 178
+  },
+  {
+    "front": "What is an age-to-age development factor, also called a link ratio?",
+    "back": "A factor measuring how much cumulative losses for a group of accident years grew from one development age to the next, used to project how immature accident years will mature.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 179
+  },
+  {
+    "front": "How is a volume-weighted average age-to-age factor computed?",
+    "back": "Sum the losses at age j+1 across every accident year with data at both age j and age j+1, and divide by the sum of the losses at age j for those same accident years.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 180
+  },
+  {
+    "front": "Two accident years show 12-month losses of 1,000 and 1,100, and 24-month losses of 1,500 and 1,650. What is the 12-to-24 age-to-age factor?",
+    "back": "Factor = (1,500 + 1,650) / (1,000 + 1,100) = 3,150 / 2,100 = 1.50.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 181
+  },
+  {
+    "front": "How does the chain-ladder method project an accident year's ultimate loss?",
+    "back": "Multiply the accident year's latest known cumulative loss by every remaining age-to-age factor out to the oldest age in the triangle.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 182
+  },
+  {
+    "front": "An accident year's latest cumulative loss is 1,200 at 12 months. The 12-to-24 factor is 1.5 and the 24-to-36 factor is 16/15. What is the chain-ladder ultimate?",
+    "back": "Ultimate = 1,200 x 1.5 x (16/15) = 1,800 x (16/15) = 1,920.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 183
+  },
+  {
+    "front": "In a chain-ladder triangle, when is a cumulative loss value treated as the ultimate loss for that accident year?",
+    "back": "When it is observed at the oldest development age in the triangle, meaning losses are assumed to have finished developing by that age.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 184
+  },
+  {
+    "front": "When does the chain-ladder method work well, and when does it perform poorly?",
+    "back": "It works well when claim reporting and settlement patterns are stable across accident years. It performs poorly when the triangle is thin, since a single large or small claim can distort a link ratio, or after a change in claims handling, business mix, or a large one-time event.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 185
+  },
+  {
+    "front": "Why can the chain-ladder method be unreliable for a very immature accident year?",
+    "back": "Because the projection multiplies a small reported loss figure by a large development factor, so the resulting ultimate is highly sensitive to random fluctuation in the small amount of data reported so far.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 186
+  },
+  {
+    "front": "How do you perform a consistency check on a completed chain-ladder projection?",
+    "back": "Sum the individual accident years' projected ultimate losses and separately sum their latest reported losses. The difference between the two totals should equal the sum of the individually computed IBNR figures.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 187
+  },
+  {
+    "front": "In a triangle, only one accident year has data at both 24 and 36 months, going from 1,500 to 1,600. What is the 24-to-36 age-to-age factor as a fraction?",
+    "back": "1,600 / 1,500 = 16/15, or approximately 1.0667.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 188
+  },
+  {
+    "front": "What is the cumulative development factor (CDF)?",
+    "back": "The product of all remaining age-to-age factors from a given development age out to the oldest age in the triangle. It represents the total remaining growth expected in an accident year's cumulative losses.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 189
+  },
+  {
+    "front": "What does the Bornhuetter-Ferguson (BF) method do that the chain-ladder method does not?",
+    "back": "It blends the chain-ladder-style projection with an independent, outside a priori estimate of expected losses, rather than relying solely on the reported claims data.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 190
+  },
+  {
+    "front": "State the BF formula for percentage reported.",
+    "back": "Percentage Reported = 1 / CDF, where CDF is the cumulative development factor from the current age out to the oldest age in the triangle.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 191
+  },
+  {
+    "front": "State the BF ultimate loss formula.",
+    "back": "BF Ultimate = Reported Losses + (Expected Losses) x (1 minus Percentage Reported).",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 192
+  },
+  {
+    "front": "What is the 'a priori' expected loss estimate used in the BF method?",
+    "back": "An estimate of expected losses made independently of the accident year's own claims experience, often computed as the premium for that year multiplied by an assumed loss ratio from pricing.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 193
+  },
+  {
+    "front": "If the CDF for an accident year is 1.6, what is the percentage reported?",
+    "back": "Percentage Reported = 1 / 1.6 = 0.625, or 62.5%.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 194
+  },
+  {
+    "front": "Reported losses are 1,200, expected losses are 2,000, and percentage reported is 62.5%. What is the BF ultimate?",
+    "back": "BF Ultimate = 1,200 + 2,000 x (1 - 0.625) = 1,200 + 2,000 x 0.375 = 1,200 + 750 = 1,950.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 195
+  },
+  {
+    "front": "How is IBNR computed under the BF method?",
+    "back": "BF IBNR = BF Ultimate minus Reported Losses, the same general subtraction used for any ultimate-loss-based reserving method.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 196
+  },
+  {
+    "front": "As an accident year matures and its percentage reported approaches 100%, what happens to the BF ultimate?",
+    "back": "It converges toward the pure chain-ladder ultimate, since the unreported portion being filled in by the a priori expected losses shrinks toward zero.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 197
+  },
+  {
+    "front": "Why does the BF method give full weight to actual reported losses?",
+    "back": "Because the reported losses term is added in full and never scaled down; only the unreported portion of ultimate losses is estimated using the outside a priori expected loss figure.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 198
+  },
+  {
+    "front": "Why is the BF method generally preferred over the pure chain-ladder method for immature accident years?",
+    "back": "Because it reduces the chain-ladder method's sensitivity to random fluctuation in a small amount of reported data, by blending in a stable, independent expected-loss estimate for the unreported portion.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 199
+  },
+  {
+    "front": "What is the expected claims technique?",
+    "back": "A reserving method that sets the projected ultimate loss equal to the a priori expected losses, entirely ignoring the claims reported so far.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 200
+  },
+  {
+    "front": "When is the expected claims technique most useful?",
+    "back": "When there is little or no reliable claims experience available, such as for a brand-new line of business or an accident year with almost no reported claims yet.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 201
+  },
+  {
+    "front": "How is IBNR computed under the expected claims technique?",
+    "back": "IBNR equals the full a priori expected loss figure minus whatever has been reported so far, since the projected ultimate is simply set equal to the expected losses.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 202
+  },
+  {
+    "front": "What is the main tradeoff of the expected claims technique?",
+    "back": "It is completely insulated from random noise in a thin or immature triangle, but it also completely ignores any genuine signal contained in claims that have actually been reported.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 203
+  },
+  {
+    "front": "How does the BF method relate to the expected claims technique and the chain-ladder method as limiting cases?",
+    "back": "When percentage reported is 0%, the BF formula reduces to the expected claims technique. When percentage reported is 100%, it reduces to the chain-ladder method.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 204
+  },
+  {
+    "front": "As an accident year ages, which reserving method does an actuary typically move through in sequence?",
+    "back": "From the expected claims technique, to the Bornhuetter-Ferguson method, to a pure chain-ladder projection, as the accident year's own reported data becomes more credible.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 205
+  },
+  {
+    "front": "What is the pure premium in ratemaking, and what is another name for it?",
+    "back": "The average loss per exposure unit, also called the loss cost. Pure Premium = Total Projected Ultimate Losses / Total Exposures.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 206
+  },
+  {
+    "front": "Does the pure premium cover an insurer's expenses or profit?",
+    "back": "No. The pure premium covers expected losses only. Expenses and profit are added separately through expense loading.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 207
+  },
+  {
+    "front": "Total ultimate losses are $1,200,000 across 2,000 exposures. What is the pure premium?",
+    "back": "Pure Premium = $1,200,000 / 2,000 = $600 per exposure.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 208
+  },
+  {
+    "front": "What is the loss ratio method used for?",
+    "back": "Adjusting an existing, already-charged rate up or down, based on how the actual experienced loss ratio compares to the permissible loss ratio built into that rate.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 209
+  },
+  {
+    "front": "What is the permissible loss ratio?",
+    "back": "The portion of premium an insurer planned to have available for losses, after covering its expense and profit provisions, when the current rate was originally built.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 210
+  },
+  {
+    "front": "State the rate change factor formula used in the loss ratio method.",
+    "back": "Rate Change Factor = Experienced Loss Ratio / Permissible Loss Ratio.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 211
+  },
+  {
+    "front": "If the rate change factor is greater than 1.0, what does that indicate?",
+    "back": "The current rate is too low relative to the losses actually being generated, so a rate increase is indicated.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 212
+  },
+  {
+    "front": "An insurer's experienced loss ratio is 70% and its permissible loss ratio is 65%. What is the indicated rate change factor?",
+    "back": "Rate Change Factor = 0.70 / 0.65 = 1.0769, indicating about a 7.69% rate increase.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 213
+  },
+  {
+    "front": "A current rate of $500 needs a rate change factor of 1.0769 applied. What is the new rate?",
+    "back": "New Rate = $500 x 1.0769 = $538.46.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 214
+  },
+  {
+    "front": "What are fixed expenses in ratemaking, and how are they expressed?",
+    "back": "Costs that do not vary with the size of the policy, such as a flat per-policy underwriting cost, expressed as a dollar amount per exposure.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 215
+  },
+  {
+    "front": "What are variable expenses in ratemaking, and how are they expressed?",
+    "back": "Costs that scale with premium, such as commissions and premium taxes, expressed as a percentage of the final rate rather than as a dollar amount.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 216
+  },
+  {
+    "front": "How is the profit provision typically expressed in the rate formula?",
+    "back": "As a percentage of the final rate, added on top of the loss and expense provisions so the insurer earns a reasonable return.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 217
+  },
+  {
+    "front": "State the expense-loaded rate formula.",
+    "back": "Rate = (Pure Premium + Fixed Expense per Exposure) / (1 - Variable Expense % - Profit %).",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 218
+  },
+  {
+    "front": "Why must variable expenses and profit be divided out of the rate rather than simply added on top?",
+    "back": "Because they are stated as a percentage of the final rate itself, not as a percentage of the pure premium, so the rate must be solved for algebraically to leave enough behind after those percentages are removed.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 219
+  },
+  {
+    "front": "Pure premium plus fixed expense per exposure is $650, variable expenses are 20% of rate, and profit is 5% of rate. What is the rate?",
+    "back": "Rate = $650 / (1 - 0.20 - 0.05) = $650 / 0.75 = $866.67.",
+    "domain": "pricing_and_reserving_for_short_term_coverages",
+    "id": 220
+  },
+  {
+    "front": "What is the payoff of a European call option at expiration?",
+    "back": "max(S_T - K, 0), where S_T is the stock price at expiration and K is the strike price. The owner only exercises when S_T exceeds K.",
+    "domain": "option_pricing_fundamentals",
+    "id": 221
+  },
+  {
+    "front": "What is the payoff of a European put option at expiration?",
+    "back": "max(K - S_T, 0), where K is the strike price and S_T is the stock price at expiration. The owner only exercises when S_T is below K.",
+    "domain": "option_pricing_fundamentals",
+    "id": 222
+  },
+  {
+    "front": "State the put-call parity equation.",
+    "back": "C - P = S_0 - K*v^T, where C is the call price, P is the put price, S_0 is the current stock price, and K*v^T is the present value of the strike.",
+    "domain": "option_pricing_fundamentals",
+    "id": 223
+  },
+  {
+    "front": "Why must put-call parity hold regardless of which pricing model is used?",
+    "back": "Because a portfolio of a call plus a bond paying K at time T has the identical payoff, in every future outcome, as a portfolio of a put plus one share of stock. Two portfolios with identical future payoffs must have identical prices today, or a riskless arbitrage profit would exist.",
+    "domain": "option_pricing_fundamentals",
+    "id": 224
+  },
+  {
+    "front": "What discounting rule must always be followed when applying put-call parity?",
+    "back": "Use one discounting convention consistently: a continuously compounded rate r requires K*e^{-rT}, while an annual effective rate i requires K*(1+i)^{-T}. Mixing the two conventions in one calculation is a common source of errors.",
+    "domain": "option_pricing_fundamentals",
+    "id": 225
+  },
+  {
+    "front": "In the one-period binomial model, what are u and d?",
+    "back": "u is the factor by which the stock price multiplies in the up state, and d is the factor by which it multiplies in the down state, with d < 1 < u.",
+    "domain": "option_pricing_fundamentals",
+    "id": 226
+  },
+  {
+    "front": "What is the formula for the risk-neutral probability p* under continuous compounding?",
+    "back": "p* = (e^{r*h} - d) / (u - d), where r is the continuously compounded risk-free rate and h is the length of one period.",
+    "domain": "option_pricing_fundamentals",
+    "id": 227
+  },
+  {
+    "front": "What is the formula for the risk-neutral probability p* under discrete compounding?",
+    "back": "p* = (1 + r - d) / (u - d), where r is the per-period effective risk-free rate.",
+    "domain": "option_pricing_fundamentals",
+    "id": 228
+  },
+  {
+    "front": "Once p* is known, how is a one-period option price calculated?",
+    "back": "C_0 = v * [p* * C_u + (1 - p*) * C_d], where v is the one-period discount factor and C_u, C_d are the option payoffs in the up and down states.",
+    "domain": "option_pricing_fundamentals",
+    "id": 229
+  },
+  {
+    "front": "Does the real-world probability of the stock going up ever enter the binomial pricing formula?",
+    "back": "No. Only u, d, the risk-free rate, and the strike price are needed. The risk-neutral probability p* replaces the real-world probability entirely.",
+    "domain": "option_pricing_fundamentals",
+    "id": 230
+  },
+  {
+    "front": "A stock at 50 moves to 60 (u factor 1.20) or 45 (d factor 0.90) over one year. The continuously compounded rate is 5%. Find the risk-neutral probability p*.",
+    "back": "p* = (e^{0.05} - 0.90) / (1.20 - 0.90) = (1.051271 - 0.90) / 0.30 = 0.504237.",
+    "domain": "option_pricing_fundamentals",
+    "id": 231
+  },
+  {
+    "front": "Using the prior card's setup, find the price of a call with strike 50.",
+    "back": "C_u = max(60-50,0) = 10, C_d = max(45-50,0) = 0. C_0 = e^{-0.05} * [0.504237*10 + 0.495763*0] = 0.951229 * 5.04237 = 4.80.",
+    "domain": "option_pricing_fundamentals",
+    "id": 232
+  },
+  {
+    "front": "What is backward induction in a multi-period binomial tree?",
+    "back": "Working from the final expiration nodes back to today, one period at a time, applying the same one-period risk-neutral pricing formula at each node until a single price emerges at the starting node.",
+    "domain": "option_pricing_fundamentals",
+    "id": 233
+  },
+  {
+    "front": "In an n-period binomial tree, how many distinct final stock prices are possible?",
+    "back": "n+1, because the ending price depends only on the number of up-moves out of n total moves, not the order in which they occurred.",
+    "domain": "option_pricing_fundamentals",
+    "id": 234
+  },
+  {
+    "front": "A two-period tree has S_0 = 100, u = 1.10, d = 0.95, r = 6% per period. Find p*.",
+    "back": "p* = (1 + 0.06 - 0.95) / (1.10 - 0.95) = 0.11 / 0.15 = 0.7333.",
+    "domain": "option_pricing_fundamentals",
+    "id": 235
+  },
+  {
+    "front": "In the prior two-period tree, the call payoffs at expiration are C_uu = 21, C_ud = 4.50, C_dd = 0. Find the call price one period earlier at the up node.",
+    "back": "C_u = [p*C_uu + (1-p*)C_ud] / (1+r) = [0.7333*21 + 0.2667*4.50] / 1.06 = 16.60 / 1.06 = 15.66.",
+    "domain": "option_pricing_fundamentals",
+    "id": 236
+  },
+  {
+    "front": "What are the Black-Scholes formulas for a European call and put?",
+    "back": "Call: C = S_0*N(d1) - K*e^{-rT}*N(d2). Put: P = K*e^{-rT}*N(-d2) - S_0*N(-d1), using the same d1 and d2 in both.",
+    "domain": "option_pricing_fundamentals",
+    "id": 237
+  },
+  {
+    "front": "What are the formulas for d1 and d2 in Black-Scholes?",
+    "back": "d1 = [ln(S_0/K) + (r + sigma^2/2)*T] / (sigma*sqrt(T)), and d2 = d1 - sigma*sqrt(T).",
+    "domain": "option_pricing_fundamentals",
+    "id": 238
+  },
+  {
+    "front": "What does N(x) represent in the Black-Scholes formula?",
+    "back": "The cumulative standard normal distribution function: the probability that a standard normal random variable is less than or equal to x, read from a standard normal table.",
+    "domain": "option_pricing_fundamentals",
+    "id": 239
+  },
+  {
+    "front": "What is the economic interpretation of N(d2) in the Black-Scholes call formula?",
+    "back": "N(d2) is the risk-neutral probability that the call finishes in the money, meaning the stock price at expiration ends up above the strike.",
+    "domain": "option_pricing_fundamentals",
+    "id": 240
+  },
+  {
+    "front": "For S_0 = K = 50, r = 5%, sigma = 30%, T = 1, find d1 and d2.",
+    "back": "d1 = [0 + (0.05 + 0.045)*1] / 0.30 = 0.095/0.30 = 0.3167. d2 = 0.3167 - 0.30 = 0.0167.",
+    "domain": "option_pricing_fundamentals",
+    "id": 241
+  },
+  {
+    "front": "Using d1 = 0.3167 and d2 = 0.0167 with N(d1) \u2248 0.6242 and N(d2) \u2248 0.5067, find the Black-Scholes call price for S_0 = K = 50, r = 5%, T = 1.",
+    "back": "C = 50*0.6242 - 50*e^{-0.05}*0.5067 = 31.21 - 47.56*0.5067 = 31.21 - 24.10 = 7.11.",
+    "domain": "option_pricing_fundamentals",
+    "id": 242
+  },
+  {
+    "front": "What single idea unifies the binomial model and the Black-Scholes formula?",
+    "back": "Risk-neutral valuation: the price of any derivative equals its expected payoff under a risk-neutral probability measure, discounted at the risk-free rate. The binomial tree converges to the Black-Scholes price as the number of periods grows large.",
+    "domain": "option_pricing_fundamentals",
+    "id": 243
+  },
+  {
+    "front": "How does a guaranteed minimum maturity benefit (GMMB) behave like an option?",
+    "back": "The policyholder receives max(A_T, G) = A_T + max(G - A_T, 0), which is the account value plus the payoff of a European put option on the fund with strike G. The insurer has effectively sold a put option bundled with the fund.",
+    "domain": "option_pricing_fundamentals",
+    "id": 244
+  },
+  {
+    "front": "How does a guaranteed minimum death benefit differ from a GMMB in option terms?",
+    "back": "Both behave like a put option on the underlying fund with the guaranteed amount as the strike, but the death benefit's put is exercised at an uncertain, mortality-driven date rather than a fixed maturity date.",
+    "domain": "option_pricing_fundamentals",
+    "id": 245
+  },
+  {
+    "front": "What is whole life insurance?",
+    "back": "A policy that pays a death benefit whenever the insured dies, with no expiration date, so the only uncertainty is the timing of the payment, not whether it occurs.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 246
+  },
+  {
+    "front": "What is term life insurance?",
+    "back": "A policy that pays a death benefit only if the insured dies within a specified term, such as 10, 20, or 30 years. If the insured survives past the term, no benefit is paid.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 247
+  },
+  {
+    "front": "What is endowment insurance?",
+    "back": "A policy that pays a benefit if the insured dies within the term, and also pays a maturity benefit if the insured survives to the end of the term, so a payment is guaranteed either way.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 248
+  },
+  {
+    "front": "What is a pure endowment?",
+    "back": "A coverage that pays a benefit only if the insured survives to the end of a specified period, and pays nothing if the insured dies before then. It is the mirror image of term insurance.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 249
+  },
+  {
+    "front": "How is endowment insurance related to term insurance and a pure endowment?",
+    "back": "Endowment insurance is mathematically the combination of a term insurance policy plus a pure endowment written over the same period; their payment streams add together.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 250
+  },
+  {
+    "front": "What is deferred insurance?",
+    "back": "A coverage where the benefit trigger cannot occur until after a waiting period, called the deferral period, has passed. No benefit is paid for a death during the deferral period.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 251
+  },
+  {
+    "front": "What is the key difference between a term policy and a deferred policy?",
+    "back": "A term policy sets an ending point after which coverage stops, while a deferred policy sets a starting point before which coverage has not yet begun.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 252
+  },
+  {
+    "front": "What is an immediate annuity?",
+    "back": "An annuity where payments begin right away, typically with the first payment due immediately or within one payment period of purchase.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 253
+  },
+  {
+    "front": "What is a deferred annuity?",
+    "back": "An annuity where the start of payments is delayed until a future date, often chosen to line up with retirement age, with no payments made during the deferral period.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 254
+  },
+  {
+    "front": "What is the difference between a whole life annuity and a temporary annuity?",
+    "back": "A whole life annuity continues paying for as long as the annuitant is alive, with no fixed end date. A temporary annuity pays only for a fixed maximum number of years, or until earlier death.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 255
+  },
+  {
+    "front": "What is a defined benefit (DB) plan?",
+    "back": "A retirement plan that promises a specific benefit formula agreed upon in advance, usually a percentage of salary times years of service, with the employer bearing the investment risk.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 256
+  },
+  {
+    "front": "What is a defined contribution (DC) plan?",
+    "back": "A retirement plan that defines how much money is contributed to an employee's account each period, with the eventual benefit depending on investment performance. The employee bears the investment risk.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 257
+  },
+  {
+    "front": "What is the accrued benefit in a DB plan?",
+    "back": "The portion of the eventual pension an employee has earned based on service completed so far, calculated by applying the plan's benefit formula to service and salary history to date.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 258
+  },
+  {
+    "front": "What does vesting mean in a DB plan?",
+    "back": "Vesting is the point at which an employee gains a guaranteed, non-forfeitable right to their accrued benefit, even if they leave the employer before retirement age.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 259
+  },
+  {
+    "front": "What is normal retirement age (NRA)?",
+    "back": "The age specified in a DB plan at which an employee is entitled to receive their full accrued benefit with no reduction.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 260
+  },
+  {
+    "front": "Why does a DB plan apply an early retirement reduction factor?",
+    "back": "Because retiring before normal retirement age means payments start earlier and are expected to continue over more years, so the plan reduces the benefit amount to compensate for the longer expected payment period.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 261
+  },
+  {
+    "front": "How is the replacement ratio calculated?",
+    "back": "Replacement ratio equals retirement income divided by pre-retirement salary. For example, a $31,500 pension against an $88,000 final salary gives a replacement ratio of about 35.8 percent.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 262
+  },
+  {
+    "front": "How do you compute a DB accrued benefit using a percent-times-final-average-salary-times-service formula?",
+    "back": "Multiply the benefit percentage by final average salary and by years of service. Example: 1.5 percent times $84,000 final average salary times 25 years of service equals $31,500 per year.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 263
+  },
+  {
+    "front": "What is the actuarial liability of a DB plan?",
+    "back": "The actuarial present value of all promised future benefit payments to current and former employees, requiring assumptions about mortality, salary growth, interest rates, and turnover.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 264
+  },
+  {
+    "front": "What is the liability of a DC plan?",
+    "back": "Simply the total of the account balances currently held for all participants, since the plan never promised a specific future benefit, only contributions plus investment earnings.",
+    "domain": "long_term_coverages_and_retirement_programs",
+    "id": 265
+  },
+  {
+    "front": "What does T_x represent?",
+    "back": "T_x is the future lifetime random variable for a life aged exactly x. It is the number of complete and partial years this person will live beyond age x.",
+    "domain": "mortality_models",
+    "id": 266
+  },
+  {
+    "front": "If a life aged 40 dies at exact age 75.3, what is T_40?",
+    "back": "T_40 = 35.3, since the person lived 35.3 more years past age 40.",
+    "domain": "mortality_models",
+    "id": 267
+  },
+  {
+    "front": "What is the difference between T_x and T_0?",
+    "back": "T_0 is the future lifetime of a newborn (age at death). T_x is the future lifetime of a life who has already reached age x, conditional on surviving to age x.",
+    "domain": "mortality_models",
+    "id": 268
+  },
+  {
+    "front": "Why does most mortality theory start with T_0 and then adapt to T_x?",
+    "back": "Because insurers issue policies to lives who are already alive at some age x, so the newborn-based theory must be conditioned on survival to x before it applies to a real policyholder.",
+    "domain": "mortality_models",
+    "id": 269
+  },
+  {
+    "front": "Define the survival function S(x).",
+    "back": "S(x) is the probability that a newborn survives to at least age x, so S(x) = P(T_0 > x).",
+    "domain": "mortality_models",
+    "id": 270
+  },
+  {
+    "front": "What are the boundary values of S(x)?",
+    "back": "S(0) = 1, because everyone is alive at birth, and S(x) approaches 0 as x approaches infinity, since no one lives forever.",
+    "domain": "mortality_models",
+    "id": 271
+  },
+  {
+    "front": "Is S(x) increasing or decreasing, and why?",
+    "back": "S(x) is decreasing, because survival to a later age can never be more likely than survival to an earlier age.",
+    "domain": "mortality_models",
+    "id": 272
+  },
+  {
+    "front": "How is the probability of dying before age x related to S(x)?",
+    "back": "The probability that a newborn dies before age x is 1 minus S(x).",
+    "domain": "mortality_models",
+    "id": 273
+  },
+  {
+    "front": "Write the formula for nPx using the survival function.",
+    "back": "nPx = S(x+n) / S(x). This divides the unconditional survival probability by S(x) to condition on already being alive at age x.",
+    "domain": "mortality_models",
+    "id": 274
+  },
+  {
+    "front": "Why must nPx be computed by dividing by S(x) rather than using S(x+n) alone?",
+    "back": "S(x+n) alone is an unconditional probability measured from birth. Dividing by S(x) conditions on the life already being alive at age x, which is what insurers actually need.",
+    "domain": "mortality_models",
+    "id": 275
+  },
+  {
+    "front": "Define the force of mortality mu_x.",
+    "back": "mu_x = negative S prime of x divided by S(x). It is the instantaneous rate of dying at exact age x, given survival to that age.",
+    "domain": "mortality_models",
+    "id": 276
+  },
+  {
+    "front": "Why is mu_x always positive even though S'(x) is negative?",
+    "back": "S(x) is decreasing so S'(x) is negative. The formula for mu_x has a minus sign in front, which turns that negative derivative into a positive value.",
+    "domain": "mortality_models",
+    "id": 277
+  },
+  {
+    "front": "What field outside actuarial science uses a concept equivalent to mu_x?",
+    "back": "General survival analysis, where mu_x is called the hazard rate.",
+    "domain": "mortality_models",
+    "id": 278
+  },
+  {
+    "front": "Write S(x) in terms of the integral of the force of mortality.",
+    "back": "S(x) = exp of negative the integral from 0 to x of mu_t dt.",
+    "domain": "mortality_models",
+    "id": 279
+  },
+  {
+    "front": "Why is the integral formula for S(x) important for parametric mortality laws?",
+    "back": "Many mortality laws, such as Gompertz and Makeham, specify mu_x directly as a formula, and this integral is used to derive S(x) and every survival probability from that formula.",
+    "domain": "mortality_models",
+    "id": 280
+  },
+  {
+    "front": "Under a constant force of mortality mu over the interval x to x+n, what is nPx?",
+    "back": "nPx = exp(negative mu times n).",
+    "domain": "mortality_models",
+    "id": 281
+  },
+  {
+    "front": "When is the constant force of mortality assumption typically used?",
+    "back": "As a simplifying device inside larger calculations, particularly when the interval involved is a fraction of a year and no other information is given.",
+    "domain": "mortality_models",
+    "id": 282
+  },
+  {
+    "front": "What is a life table radix?",
+    "back": "The radix is the arbitrary starting number of lives assumed at age 0 in a life table, commonly a round number such as 100,000.",
+    "domain": "mortality_models",
+    "id": 283
+  },
+  {
+    "front": "Define l_x in terms of the radix and S(x).",
+    "back": "l_x = l_0 times S(x), the expected number of survivors to age x out of the l_0 lives who started at birth.",
+    "domain": "mortality_models",
+    "id": 284
+  },
+  {
+    "front": "Is l_x a probability?",
+    "back": "No. l_x is an expected count of lives, not a probability, although it is built directly from the survival probability S(x).",
+    "domain": "mortality_models",
+    "id": 285
+  },
+  {
+    "front": "Define d_x.",
+    "back": "d_x is the expected number of deaths between age x and age x+1, equal to l_x minus l_{x+1}.",
+    "domain": "mortality_models",
+    "id": 286
+  },
+  {
+    "front": "Define q_x and give its formula in terms of d_x and l_x.",
+    "back": "q_x is the probability that a life aged exactly x dies within one year. q_x = d_x / l_x.",
+    "domain": "mortality_models",
+    "id": 287
+  },
+  {
+    "front": "Define p_x and give two equivalent formulas for it.",
+    "back": "p_x is the probability a life aged exactly x survives at least one more year. p_x = 1 - q_x = l_{x+1} / l_x.",
+    "domain": "mortality_models",
+    "id": 288
+  },
+  {
+    "front": "Given l_60 = 100,000 and l_61 = 99,000, find q_60.",
+    "back": "d_60 = 100,000 - 99,000 = 1,000. q_60 = 1,000 / 100,000 = 0.01000.",
+    "domain": "mortality_models",
+    "id": 289
+  },
+  {
+    "front": "Given q_60 = 0.01000, find p_60.",
+    "back": "p_60 = 1 - 0.01000 = 0.99000.",
+    "domain": "mortality_models",
+    "id": 290
+  },
+  {
+    "front": "Why are q_x and p_x described as the building blocks of insurance pricing?",
+    "back": "A one year term insurance on a life aged x pays out with probability q_x and pays nothing with probability p_x, and every more complex insurance and annuity formula is built by chaining q_x and p_x values across many years.",
+    "domain": "mortality_models",
+    "id": 291
+  },
+  {
+    "front": "Write nPx using life table notation.",
+    "back": "nPx = l_{x+n} / l_x.",
+    "domain": "mortality_models",
+    "id": 292
+  },
+  {
+    "front": "Write nPx as a chain of one year survival probabilities.",
+    "back": "nPx = p_x times p_{x+1} times p_{x+2} times ... times p_{x+n-1}.",
+    "domain": "mortality_models",
+    "id": 293
+  },
+  {
+    "front": "Given l_60 = 100,000 and l_63 = 96,500, find 3P60.",
+    "back": "3P60 = l_63 / l_60 = 96,500 / 100,000 = 0.96500.",
+    "domain": "mortality_models",
+    "id": 294
+  },
+  {
+    "front": "Define the n-year deferred probability of death n|qx.",
+    "back": "n|qx is the probability a life aged x survives n years and then dies in the following year. n|qx = nPx times q_{x+n} = (l_{x+n} - l_{x+n+1}) / l_x.",
+    "domain": "mortality_models",
+    "id": 295
+  },
+  {
+    "front": "Define n|mqx.",
+    "back": "n|mqx is the probability a life aged x survives n years and then dies within the following m years. n|mqx = nPx - (n+m)Px = (l_{x+n} - l_{x+n+m}) / l_x.",
+    "domain": "mortality_models",
+    "id": 296
+  },
+  {
+    "front": "What is a plain English way to remember the n|mqx formula?",
+    "back": "It is the number alive at the start of the deferral period minus the number still alive at the end of the whole period, divided by the number alive at age x.",
+    "domain": "mortality_models",
+    "id": 297
+  },
+  {
+    "front": "Given l_60 = 100,000, l_61 = 99,000, and l_62 = 97,800, find q_61.",
+    "back": "d_61 = 99,000 - 97,800 = 1,200. q_61 = 1,200 / 99,000 = 0.012121.",
+    "domain": "mortality_models",
+    "id": 298
+  },
+  {
+    "front": "Define the curtate future lifetime K_x.",
+    "back": "K_x is the integer number of complete future years lived by a life aged x. K_x = floor(T_x), the greatest whole number less than or equal to T_x.",
+    "domain": "mortality_models",
+    "id": 299
+  },
+  {
+    "front": "If T_x = 35.3, what is K_x?",
+    "back": "K_x = 35, since floor(35.3) = 35.",
+    "domain": "mortality_models",
+    "id": 300
+  },
+  {
+    "front": "Give the probability formula P(K_x = k).",
+    "back": "P(K_x = k) = kPx times q_{x+k}, the probability of surviving k full years and then dying in the following year.",
+    "domain": "mortality_models",
+    "id": 301
+  },
+  {
+    "front": "Define the complete expectation of life e-degree-x.",
+    "back": "e-degree-x is the expected value of T_x, the average number of years (counting partial years) a life aged x is expected to live. e-degree-x = the integral from 0 to infinity of tPx dt.",
+    "domain": "mortality_models",
+    "id": 302
+  },
+  {
+    "front": "Define the curtate expectation of life e_x.",
+    "back": "e_x is the expected value of K_x, the average number of complete future years lived. e_x = the sum from k=1 to infinity of kPx.",
+    "domain": "mortality_models",
+    "id": 303
+  },
+  {
+    "front": "In plain English, how is e_x computed from a life table?",
+    "back": "Add together the probability of surviving 1 more year, plus the probability of surviving 2 more years, plus the probability of surviving 3 more years, and so on, for every future year.",
+    "domain": "mortality_models",
+    "id": 304
+  },
+  {
+    "front": "Why does the sum for e_x have only finitely many nonzero terms in a table with a maximum age omega?",
+    "back": "Because kPx = 0 once x+k exceeds omega, since l_x is zero beyond the table's terminal age.",
+    "domain": "mortality_models",
+    "id": 305
+  },
+  {
+    "front": "A life table has l_60 = 100,000, l_61 = 99,000, l_62 = 97,800, l_63 = 96,500, l_64 = 95,100, l_65 = 0. Find 1P60 through 5P60.",
+    "back": "1P60 = 0.99000, 2P60 = 0.97800, 3P60 = 0.96500, 4P60 = 0.95100, 5P60 = 0.00000.",
+    "domain": "mortality_models",
+    "id": 306
+  },
+  {
+    "front": "Using the table where 1P60 = 0.99000, 2P60 = 0.97800, 3P60 = 0.96500, 4P60 = 0.95100, 5P60 = 0.00000, find e_60.",
+    "back": "e_60 = 0.99000 + 0.97800 + 0.96500 + 0.95100 + 0.00000 = 3.884 years.",
+    "domain": "mortality_models",
+    "id": 307
+  },
+  {
+    "front": "How does e_x differ from e-degree-x in what it represents?",
+    "back": "e_x expects only complete future years lived (a sum over discrete kPx values), while e-degree-x expects the exact continuous future lifetime T_x, including partial years (an integral over continuous tPx values).",
+    "domain": "mortality_models",
+    "id": 308
+  },
+  {
+    "front": "Which expectation of life, e_x or e-degree-x, is most often used directly in FAM life table calculations?",
+    "back": "e_x, the curtate expectation, since it can be computed from a life table using only addition once each kPx is known.",
+    "domain": "mortality_models",
+    "id": 309
+  },
+  {
+    "front": "What is select mortality?",
+    "back": "Mortality that depends on both attained age and how recently the life was medically underwritten, since a recently examined life tends to be healthier than average for that age.",
+    "domain": "mortality_models",
+    "id": 310
+  },
+  {
+    "front": "Why does select mortality fade over time into ultimate mortality?",
+    "back": "The extra health information gained from underwriting becomes stale as years pass, so mortality gradually converges back to the general population level for that age.",
+    "domain": "mortality_models",
+    "id": 311
+  },
+  {
+    "front": "What does the notation q_{[x]} mean?",
+    "back": "It is the probability of death in the first year after selection (underwriting) at age x.",
+    "domain": "mortality_models",
+    "id": 312
+  },
+  {
+    "front": "What does the notation q_{[x]+1} mean?",
+    "back": "It is the probability of death in the second year after selection at age x, when the life is now one year older.",
+    "domain": "mortality_models",
+    "id": 313
+  },
+  {
+    "front": "What is the select period?",
+    "back": "The fixed number of years after underwriting during which selection is assumed to still have an effect on mortality.",
+    "domain": "mortality_models",
+    "id": 314
+  },
+  {
+    "front": "If the select period has length r, what equation links select and ultimate rates?",
+    "back": "q_{[x]+r} = q_{x+r}. Select and ultimate rates agree exactly once r years have passed since underwriting.",
+    "domain": "mortality_models",
+    "id": 315
+  },
+  {
+    "front": "How are select and ultimate life tables typically laid out?",
+    "back": "With one column per duration since selection (0, 1, 2, and so on through the select period) followed by a final column of ultimate rates indexed by attained age.",
+    "domain": "mortality_models",
+    "id": 316
+  },
+  {
+    "front": "What is a common careless error when reading a select and ultimate table?",
+    "back": "Reading straight down an attained-age column out of habit instead of choosing the select column that matches how long ago the life was underwritten.",
+    "domain": "mortality_models",
+    "id": 317
+  },
+  {
+    "front": "What does SULT stand for?",
+    "back": "The Standard Ultimate Life Table, the reference mortality table supplied to candidates on the FAM exam.",
+    "domain": "mortality_models",
+    "id": 318
+  },
+  {
+    "front": "What is the radix of the SULT?",
+    "back": "l_0 = 100,000 lives.",
+    "domain": "mortality_models",
+    "id": 319
+  },
+  {
+    "front": "Does the SULT have a select period?",
+    "back": "No. The SULT is an ultimate table, meaning every mortality rate in it depends on attained age alone.",
+    "domain": "mortality_models",
+    "id": 320
+  },
+  {
+    "front": "What skill does the FAM exam test with SULT-based questions?",
+    "back": "Fluent use of the table itself: looking up l_x at the correct ages, combining l_x entries into multi-year and deferred probabilities, and summing survival probabilities to get life expectancies.",
+    "domain": "mortality_models",
+    "id": 321
+  },
+  {
+    "front": "What extra feature does the SULT incorporate beyond a basic age-based mortality pattern?",
+    "back": "An assumption about mortality improvement over calendar time, since later generations tend to experience lower mortality at a given age than earlier generations did.",
+    "domain": "mortality_models",
+    "id": 322
+  },
+  {
+    "front": "Why is careful reading of ages in the SULT especially important?",
+    "back": "Because the SULT is a fixed published table rather than a formula, most SULT-based questions reduce to careful lookups and arithmetic, so misreading which age an l_x entry corresponds to is a common source of error.",
+    "domain": "mortality_models",
+    "id": 323
+  },
+  {
+    "front": "State Gompertz's law for the force of mortality.",
+    "back": "mu_x = B times c to the power x, where B and c are positive constants and c is greater than 1.",
+    "domain": "mortality_models",
+    "id": 324
+  },
+  {
+    "front": "In Gompertz's law, what do the parameters B and c control?",
+    "back": "B sets the overall scale of mortality, and c controls how quickly mortality rises with age; a larger c means mortality increases faster as a person gets older.",
+    "domain": "mortality_models",
+    "id": 325
+  },
+  {
+    "front": "State Makeham's law for the force of mortality.",
+    "back": "mu_x = A + B times c to the power x, extending Gompertz's law with an added age-independent constant A.",
+    "domain": "mortality_models",
+    "id": 326
+  },
+  {
+    "front": "What does the constant A represent in Makeham's law?",
+    "back": "An age-independent component of mortality, such as background accident risk, that does not grow with age the way biological aging risk does.",
+    "domain": "mortality_models",
+    "id": 327
+  },
+  {
+    "front": "What happens to Makeham's law when A = 0?",
+    "back": "It reduces exactly to Gompertz's law, so Gompertz's law is a special case of Makeham's law.",
+    "domain": "mortality_models",
+    "id": 328
+  },
+  {
+    "front": "Under Gompertz's law with B = 0.0001 and c = 1.1, find mu_70.",
+    "back": "mu_70 = 0.0001 times 1.1 to the power 70. Since 1.1 to the power 70 is approximately 789.75, mu_70 is approximately 0.0790.",
+    "domain": "mortality_models",
+    "id": 329
+  },
+  {
+    "front": "What is the closed form survival function under Gompertz's law?",
+    "back": "S(x) = exp of negative (B divided by the natural log of c) times (c to the power x minus 1).",
+    "domain": "mortality_models",
+    "id": 330
+  },
+  {
+    "front": "What is K_x?",
+    "back": "K_x is the curtate future lifetime of a person age x, the number of complete years the person lives beyond age x before dying. If death happens during the (k+1)th year, K_x equals k.",
+    "domain": "present_value_random_variables",
+    "id": 331
+  },
+  {
+    "front": "Define the present value random variable Z for a discrete whole life insurance of 1.",
+    "back": "Z = v^(K_x+1), where v = 1/(1+i) is the annual discount factor. The benefit of 1 is paid at the end of the year of death, discounted back that many years.",
+    "domain": "present_value_random_variables",
+    "id": 332
+  },
+  {
+    "front": "Why is the exponent on Z written as K_x+1 and not K_x?",
+    "back": "Because the benefit is paid at the end of the year of death, not the start. If K_x = 0 (death in year one), the payment happens at time 1, so the discount factor is v^1.",
+    "domain": "present_value_random_variables",
+    "id": 333
+  },
+  {
+    "front": "What is A_x?",
+    "back": "A_x is the actuarial present value of a whole life insurance of 1, defined as A_x = E[Z]. It is the expected present value of the death benefit.",
+    "domain": "present_value_random_variables",
+    "id": 334
+  },
+  {
+    "front": "Write the summation formula for A_x.",
+    "back": "A_x = sum over k = 0, 1, 2, ... of v^(k+1) times kpx times qx+k, where kpx is the probability of surviving k years and qx+k is the probability of dying in the following year.",
+    "domain": "present_value_random_variables",
+    "id": 335
+  },
+  {
+    "front": "What does kpx mean?",
+    "back": "kpx is the probability that a person currently age x survives at least k more years, that is, survives to age x+k.",
+    "domain": "present_value_random_variables",
+    "id": 336
+  },
+  {
+    "front": "What does qx+k mean?",
+    "back": "qx+k is the probability that a person who has already reached age x+k dies within the following one year.",
+    "domain": "present_value_random_variables",
+    "id": 337
+  },
+  {
+    "front": "What does the product kpx times qx+k represent?",
+    "back": "It is the probability that a person age x survives k full years and then dies during year k+1, which is exactly the probability that K_x equals k.",
+    "domain": "present_value_random_variables",
+    "id": 338
+  },
+  {
+    "front": "What is term insurance, and how is its actuarial present value notated?",
+    "back": "Term insurance pays a benefit only if death occurs within a fixed n-year period. It is written A^1_x:n, with the superscript 1 marking that the benefit is contingent on death.",
+    "domain": "present_value_random_variables",
+    "id": 339
+  },
+  {
+    "front": "Write the formula for A^1_x:n, an n-year term insurance.",
+    "back": "A^1_x:n = sum over k = 0 to n-1 of v^(k+1) times kpx times qx+k. It is the whole life sum truncated after n years.",
+    "domain": "present_value_random_variables",
+    "id": 340
+  },
+  {
+    "front": "What is a pure endowment, and how is its actuarial present value notated?",
+    "back": "A pure endowment pays 1 only if the insured survives to the end of an n-year period. Its notation places the superscript 1 below and to the right of the A, written A^{ 1}_x:n, sometimes also written nEx.",
+    "domain": "present_value_random_variables",
+    "id": 341
+  },
+  {
+    "front": "Write the formula for the pure endowment A^{ 1}_x:n.",
+    "back": "A^{ 1}_x:n = v^n times npx, the discounted value of 1 multiplied by the probability of surviving all n years.",
+    "domain": "present_value_random_variables",
+    "id": 342
+  },
+  {
+    "front": "What is endowment insurance, and how is its actuarial present value found?",
+    "back": "Endowment insurance pays 1 whether death occurs within n years or the person survives to the end. Its actuarial present value is A_x:n = A^1_x:n + A^{ 1}_x:n, the sum of the term insurance and the pure endowment.",
+    "domain": "present_value_random_variables",
+    "id": 343
+  },
+  {
+    "front": "Does an endowment insurance always pay a benefit?",
+    "back": "Yes. Either the death benefit is paid if death occurs during the term, or the survival benefit is paid if the person is alive at the end of the term. One or the other always happens.",
+    "domain": "present_value_random_variables",
+    "id": 344
+  },
+  {
+    "front": "What is a deferred insurance?",
+    "back": "A deferred insurance pays a death benefit only if death occurs after a waiting period of m years. Its formula starts the summation at k = m using the same v^(k+1) times kpx times qx+k terms as whole life insurance, with no extra factor needed since kpx already reflects survival to that year; equivalently it can be written as v^m times mpx times A_x+m.",
+    "domain": "present_value_random_variables",
+    "id": 345
+  },
+  {
+    "front": "If a term insurance pays nothing, what must have happened?",
+    "back": "The insured survived past the end of the n-year term. Term insurance only pays a benefit if death occurs strictly within the n-year period.",
+    "domain": "present_value_random_variables",
+    "id": 346
+  },
+  {
+    "front": "If a pure endowment pays nothing, what must have happened?",
+    "back": "The insured died at some point before the end of the n-year period. A pure endowment pays only on survival to exactly time n.",
+    "domain": "present_value_random_variables",
+    "id": 347
+  },
+  {
+    "front": "Define the present value random variable Y for a whole life annuity-due.",
+    "back": "Y = a-angle-(K_x+1), the present value of an annuity-certain paying 1 at the start of each year for K_x+1 years, the number of payments actually received before death.",
+    "domain": "present_value_random_variables",
+    "id": 348
+  },
+  {
+    "front": "Why does an annuitant who dies with K_x = k receive k+1 payments, not k?",
+    "back": "Payments happen at times 0, 1, 2, up through k (annuity-due, paid at the start of each year), and the person is alive at time 0 by assumption, so they collect k+1 total payments before dying.",
+    "domain": "present_value_random_variables",
+    "id": 349
+  },
+  {
+    "front": "Write the closed-form formula for the annuity-certain a-angle-n.",
+    "back": "a-angle-n = (1 - v^n) / d, where d is the annual discount rate.",
+    "domain": "present_value_random_variables",
+    "id": 350
+  },
+  {
+    "front": "How is the discount rate d related to i and v?",
+    "back": "d = 1 - v = i/(1+i) = i times v. It represents the amount deducted from 1 unit paid at year end to find its value today.",
+    "domain": "present_value_random_variables",
+    "id": 351
+  },
+  {
+    "front": "What is \u00e4_x?",
+    "back": "\u00e4_x is the actuarial present value of a whole life annuity-due, defined as \u00e4_x = E[Y]. The two dots signal payments at the start of each year rather than the end.",
+    "domain": "present_value_random_variables",
+    "id": 352
+  },
+  {
+    "front": "What is \u00e4_x:n?",
+    "back": "\u00e4_x:n is the actuarial present value of a temporary annuity-due, paying 1 at the start of each year for at most n years, stopping at death or at n years, whichever comes first.",
+    "domain": "present_value_random_variables",
+    "id": 353
+  },
+  {
+    "front": "Express Y directly in terms of Z.",
+    "back": "Y = (1 - Z) / d, since both Y and Z are built from the same random variable K_x through v^(K_x+1).",
+    "domain": "present_value_random_variables",
+    "id": 354
+  },
+  {
+    "front": "State the key relationship between A_x and \u00e4_x.",
+    "back": "A_x = 1 - d times \u00e4_x, which follows directly from taking the expected value of Y = (1-Z)/d.",
+    "domain": "present_value_random_variables",
+    "id": 355
+  },
+  {
+    "front": "Rearrange A_x = 1 - d times \u00e4_x to solve for \u00e4_x.",
+    "back": "\u00e4_x = (1 - A_x) / d.",
+    "domain": "present_value_random_variables",
+    "id": 356
+  },
+  {
+    "front": "Does the identity A_x = 1 - d times \u00e4_x also hold for temporary and endowment insurance?",
+    "back": "Yes, provided the insurance and annuity subscripts match exactly, for example A_x:n = 1 - d times \u00e4_x:n, since both must be built from the same underlying random variable over the same period.",
+    "domain": "present_value_random_variables",
+    "id": 357
+  },
+  {
+    "front": "Why can't you mix an n-year term insurance with a whole life annuity in the A = 1 - d*\u00e4 identity?",
+    "back": "The identity only holds when the insurance and the annuity cover the exact same person, age, and time period. A term insurance and a whole life annuity are built from different random variables, so the shortcut does not apply.",
+    "domain": "present_value_random_variables",
+    "id": 358
+  },
+  {
+    "front": "What is the general formula for the variance of any random variable Z?",
+    "back": "Var(Z) = E[Z^2] - (E[Z])^2, the second moment minus the square of the mean.",
+    "domain": "present_value_random_variables",
+    "id": 359
+  },
+  {
+    "front": "What happens when you square Z = v^(K_x+1)?",
+    "back": "Z^2 = v^(2(K_x+1)) = (v^2)^(K_x+1), which has exactly the same mathematical form as Z but with v replaced by v^2 throughout.",
+    "domain": "present_value_random_variables",
+    "id": 360
+  },
+  {
+    "front": "What is ^2A_x?",
+    "back": "^2A_x is E[Z^2], computed with the same formula as A_x but with every v replaced by v^2 (equivalently, using interest rate (1+i)^2 - 1). The mortality probabilities do not change.",
+    "domain": "present_value_random_variables",
+    "id": 361
+  },
+  {
+    "front": "Why is ^2A_x called the result of 'double the force of interest'?",
+    "back": "Because replacing v with v^2 is equivalent to valuing the insurance at the interest rate (1+i)^2 - 1, which corresponds to doubling the underlying force of interest used for discounting.",
+    "domain": "present_value_random_variables",
+    "id": 362
+  },
+  {
+    "front": "Write the formula for Var(Z) using the double-force trick.",
+    "back": "Var(Z) = ^2A_x - (A_x)^2.",
+    "domain": "present_value_random_variables",
+    "id": 363
+  },
+  {
+    "front": "How do you find Var(Y) once you already know Var(Z)?",
+    "back": "Var(Y) = Var(Z) / d^2, using the fact that Y = (1-Z)/d is a linear transformation of Z, so no separate double-force annuity calculation is needed.",
+    "domain": "present_value_random_variables",
+    "id": 364
+  },
+  {
+    "front": "In the variance formula Var(Y) = Var(Z)/d^2, why does d get squared?",
+    "back": "Variance scales by the square of any constant a random variable is multiplied by. Since Y is Z multiplied by the constant -1/d (plus a shift), Var(Y) equals Var(Z) times (1/d)^2.",
+    "domain": "present_value_random_variables",
+    "id": 365
+  },
+  {
+    "front": "Given l_x = 100,000 and l_x+1 = 99,000, find qx.",
+    "back": "qx = (l_x - l_x+1)/l_x = (100,000 - 99,000)/100,000 = 1,000/100,000 = 0.01.",
+    "domain": "present_value_random_variables",
+    "id": 366
+  },
+  {
+    "front": "Given l_x = 100,000 and l_x+3 = 95,000, find 3px.",
+    "back": "3px = l_x+3 / l_x = 95,000/100,000 = 0.95.",
+    "domain": "present_value_random_variables",
+    "id": 367
+  },
+  {
+    "front": "With i = 0.05, what is v?",
+    "back": "v = 1/(1+i) = 1/1.05 = 0.952381.",
+    "domain": "present_value_random_variables",
+    "id": 368
+  },
+  {
+    "front": "With i = 0.05, what is d?",
+    "back": "d = 1 - v = 1 - 0.952381 = 0.047619 (equivalently d = i/(1+i) = 0.05/1.05 = 0.047619).",
+    "domain": "present_value_random_variables",
+    "id": 369
+  },
+  {
+    "front": "In the worked 3-year term insurance example (i=0.05, qx=0.01, qx+1=0.0151515, qx+2=0.0256410), what is A^1_x:3?",
+    "back": "A^1_x:3 = 0.0095238 + 0.0136054 + 0.0215959 = 0.044725, summing v^(k+1) times kpx times qx+k for k = 0, 1, 2.",
+    "domain": "present_value_random_variables",
+    "id": 370
+  },
+  {
+    "front": "In that same example, what is the pure endowment A^{ 1}_x:3?",
+    "back": "A^{ 1}_x:3 = v^3 times 3px = 0.863838 times 0.95 = 0.820646.",
+    "domain": "present_value_random_variables",
+    "id": 371
+  },
+  {
+    "front": "In that same example, what is the endowment insurance A_x:3?",
+    "back": "A_x:3 = A^1_x:3 + A^{ 1}_x:3 = 0.044725 + 0.820646 = 0.865371.",
+    "domain": "present_value_random_variables",
+    "id": 372
+  },
+  {
+    "front": "Using A_x:3 = 0.865371 and d = 0.047619, find \u00e4_x:3.",
+    "back": "\u00e4_x:3 = (1 - A_x:3)/d = (1 - 0.865371)/0.047619 = 0.134629/0.047619 = 2.8272.",
+    "domain": "present_value_random_variables",
+    "id": 373
+  },
+  {
+    "front": "In the worked example, what is ^2A^1_x:3 for the term insurance (using v^2, v^4, v^6 in place of v, v^2, v^3)?",
+    "back": "^2A^1_x:3 = 0.0090703 + 0.0123405 + 0.0186554 = 0.0400662.",
+    "domain": "present_value_random_variables",
+    "id": 374
+  },
+  {
+    "front": "Using A^1_x:3 = 0.044725 and ^2A^1_x:3 = 0.0400662, find Var(Z) for the term insurance.",
+    "back": "Var(Z) = ^2A^1_x:3 - (A^1_x:3)^2 = 0.0400662 - 0.0020003 = 0.0380659.",
+    "domain": "present_value_random_variables",
+    "id": 375
+  },
+  {
+    "front": "What is the largest possible value Z can take, and when does it occur?",
+    "back": "The largest value of Z is v^1 (the least amount of discounting), which occurs when K_x = 0, meaning death happens in the very first year.",
+    "domain": "present_value_random_variables",
+    "id": 376
+  },
+  {
+    "front": "As the year of death gets later and later, what happens to Z?",
+    "back": "Z gets smaller, approaching 0, since a larger exponent on v means more discounting and therefore a smaller present value.",
+    "domain": "present_value_random_variables",
+    "id": 377
+  },
+  {
+    "front": "What is the smallest possible value of the term insurance random variable for A^1_x:n?",
+    "back": "0, which occurs whenever the insured survives past the end of the n-year term, since no death benefit is paid in that case.",
+    "domain": "present_value_random_variables",
+    "id": 378
+  },
+  {
+    "front": "Why is A^{ 1}_x:n sometimes written as nEx?",
+    "back": "nEx is an alternative, shorter notation for the pure endowment, both meaning the actuarial present value of 1 paid only if the person age x survives n years.",
+    "domain": "present_value_random_variables",
+    "id": 379
+  },
+  {
+    "front": "What are the two separate 'worlds' combined inside any present value random variable?",
+    "back": "A fixed, known interest world (v, i, d, set by the contract) and a random, unknown mortality world (K_x, kpx, qx+k, determined by how long the person actually lives).",
+    "domain": "present_value_random_variables",
+    "id": 380
+  },
+  {
+    "front": "What is the domain weight of Present Value Random Variables on SOA Exam FAM?",
+    "back": "This domain carries 15 percent of the total exam weight, tied for the largest single topic among the ten domains.",
+    "domain": "present_value_random_variables",
+    "id": 381
+  },
+  {
+    "front": "How many payments does an annuity-due make if the annuitant survives the entire n-year temporary period?",
+    "back": "Exactly n payments, at times 0, 1, 2, up through n-1, since the annuity-due pays at the start of each year and stops once n years have been reached.",
+    "domain": "present_value_random_variables",
+    "id": 382
+  },
+  {
+    "front": "True or false: Var(Z) can be computed using the same kpx and qx+k values already used for A_x.",
+    "back": "True. Only the discount factors change (v becomes v^2); the mortality probabilities kpx and qx+k remain exactly the same in the ^2A_x calculation.",
+    "domain": "present_value_random_variables",
+    "id": 383
+  },
+  {
+    "front": "Why is it incorrect to compute Var(Z) as A_x squared minus A_x?",
+    "back": "Variance requires the second moment E[Z^2], which is ^2A_x, not A_x itself. The correct formula is Var(Z) = ^2A_x - (A_x)^2, not any expression built from A_x alone.",
+    "domain": "present_value_random_variables",
+    "id": 384
+  },
+  {
+    "front": "What does the superscript 1 directly above the A signify in A^1_x:n?",
+    "back": "It marks that the insurance benefit is contingent on death occurring within the stated period, distinguishing term insurance from a pure endowment.",
+    "domain": "present_value_random_variables",
+    "id": 385
+  },
+  {
+    "front": "What does the superscript 1 placed below and to the right signify in A^{ 1}_x:n?",
+    "back": "It marks that the benefit is contingent on survival to the end of the stated period, identifying a pure endowment rather than a term insurance.",
+    "domain": "present_value_random_variables",
+    "id": 386
+  },
+  {
+    "front": "If A_x = 0.4 and d = 0.05, what is \u00e4_x?",
+    "back": "\u00e4_x = (1 - A_x)/d = (1 - 0.4)/0.05 = 0.6/0.05 = 12.",
+    "domain": "present_value_random_variables",
+    "id": 387
+  },
+  {
+    "front": "If \u00e4_x = 15 and d = 0.04, what is A_x?",
+    "back": "A_x = 1 - d times \u00e4_x = 1 - 0.04 times 15 = 1 - 0.6 = 0.4.",
+    "domain": "present_value_random_variables",
+    "id": 388
+  },
+  {
+    "front": "What quantity must you find before you can compute either A_x or \u00e4_x from a mortality table?",
+    "back": "You must first find kpx and qx+k (or equivalently the survival counts l_x+k) for every relevant future year, since both APVs are built from these probabilities.",
+    "domain": "present_value_random_variables",
+    "id": 389
+  },
+  {
+    "front": "What single random variable underlies both Z and Y?",
+    "back": "K_x, the curtate future lifetime. Both Z = v^(K_x+1) and Y = a-angle-(K_x+1) are functions of the exact same K_x.",
+    "domain": "present_value_random_variables",
+    "id": 390
+  },
+  {
+    "front": "How would you check a term insurance formula quickly using an extreme case?",
+    "back": "Check what happens if death occurs in year one (present value close to the full benefit of 1) and what happens if the person survives the whole term (present value of 0), since term insurance only pays on death within the period.",
+    "domain": "present_value_random_variables",
+    "id": 391
+  },
+  {
+    "front": "How would you check a pure endowment formula quickly using an extreme case?",
+    "back": "Check that immediate death pays nothing and that surviving exactly to time n pays the full discounted benefit v^n, since a pure endowment only pays on survival.",
+    "domain": "present_value_random_variables",
+    "id": 392
+  },
+  {
+    "front": "Why is A_x:n always at least as large as A^1_x:n alone?",
+    "back": "Because A_x:n = A^1_x:n + A^{ 1}_x:n, and the pure endowment piece A^{ 1}_x:n is always nonnegative, so adding it can only increase or leave unchanged the term insurance value.",
+    "domain": "present_value_random_variables",
+    "id": 393
+  },
+  {
+    "front": "What does 'discrete' mean in 'discrete whole life insurance'?",
+    "back": "It means the death benefit is paid only at the end of the discrete policy year in which death occurs, rather than at the exact instant of death (which would be a continuous, fully continuous insurance model instead).",
+    "domain": "present_value_random_variables",
+    "id": 394
+  },
+  {
+    "front": "What is the annuity-due payment timing, and how does it differ from an annuity-immediate?",
+    "back": "An annuity-due pays at the START of each year (times 0, 1, 2, ...), while an annuity-immediate pays at the END of each year (times 1, 2, 3, ...). The whole life annuity Y in this chapter is built on the annuity-due timing.",
+    "domain": "present_value_random_variables",
+    "id": 395
+  },
+  {
+    "front": "If i = 0.05, what interest rate corresponds to 'double the force of interest' for computing ^2A_x?",
+    "back": "(1+i)^2 - 1 = 1.05^2 - 1 = 1.1025 - 1 = 0.1025, or 10.25 percent, since v^2 corresponds to discounting at this doubled rate.",
+    "domain": "present_value_random_variables",
+    "id": 396
+  },
+  {
+    "front": "Why does organizing kpx and qx+k in a small table before multiplying by discount factors reduce exam errors?",
+    "back": "It separates the mortality calculation from the interest calculation into two clean steps, which prevents the arithmetic slips that happen when both are combined in one long expression under time pressure.",
+    "domain": "present_value_random_variables",
+    "id": 397
+  },
+  {
+    "front": "What formula connects term insurance, pure endowment, and endowment insurance?",
+    "back": "A_x:n = A^1_x:n + A^{ 1}_x:n. The endowment insurance is always the sum of the term insurance and the matching pure endowment on the same person and period.",
+    "domain": "present_value_random_variables",
+    "id": 398
+  },
+  {
+    "front": "In the deferred insurance formula, why does the sum start at k = m instead of k = 0?",
+    "back": "Because an m-year deferred insurance only pays a benefit if death occurs after the m-year waiting period has passed, so no earlier years of death (k less than m) contribute to the present value.",
+    "domain": "present_value_random_variables",
+    "id": 399
+  },
+  {
+    "front": "What are the two equivalent ways to write the actuarial present value of an m-year deferred whole life insurance?",
+    "back": "Either sum over k = m, m+1, ... of v^(k+1) times kpx times qx+k (the same term-by-term form as A_x, just starting later), or v^m times mpx times A_x+m (discount and survive to the deferral point, then apply an ordinary whole life insurance at the new age). Both give the identical value; they are not separate factors to combine.",
+    "domain": "present_value_random_variables",
+    "id": 400
+  },
+  {
+    "front": "Why is Var(Z) always nonnegative?",
+    "back": "Variance is defined as an average of squared deviations from the mean, and squared numbers can never be negative, so Var(Z) = ^2A_x - (A_x)^2 must always come out to zero or a positive number.",
+    "domain": "present_value_random_variables",
+    "id": 401
+  },
+  {
+    "front": "What is the practical use of computing Var(Z) or Var(Y) for an insurer?",
+    "back": "The variance measures how spread out the present value outcomes are, which feeds directly into pricing risk margins, premium loadings, and capital requirements beyond just the expected cost captured by A_x or \u00e4_x.",
+    "domain": "present_value_random_variables",
+    "id": 402
+  },
+  {
+    "front": "Is A_x the premium a policyholder pays for whole life insurance?",
+    "back": "No. A_x is the actuarial present value of the benefit only, representing the expected cost to the insurer. The actual premium calculation, covered later in the syllabus, builds on A_x but also accounts for expenses and the timing of premium payments.",
+    "domain": "present_value_random_variables",
+    "id": 403
+  },
+  {
+    "front": "Summarize the single biggest shortcut formula from this chapter.",
+    "back": "A_x = 1 - d times \u00e4_x (equivalently \u00e4_x = (1-A_x)/d), which converts an insurance APV to its matching annuity APV, or the reverse, without resumming any mortality series.",
+    "domain": "present_value_random_variables",
+    "id": 404
+  },
+  {
+    "front": "If two people are the same age x with identical mortality, do they have the same Z?",
+    "back": "Not necessarily. Z depends on the actual realized value of K_x for each person, which can differ even between two people with identical mortality probabilities, since death timing is random for each individual.",
+    "domain": "present_value_random_variables",
+    "id": 405
+  },
+  {
+    "front": "State the equivalence principle used to calculate net premiums.",
+    "back": "The actuarial present value of premiums equals the actuarial present value of benefits at issue: EPV[premiums] = EPV[benefits]. This balance is set at time zero, the moment the policy is issued.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 406
+  },
+  {
+    "front": "What does EPV stand for and how does it differ from an ordinary present value?",
+    "back": "EPV stands for expected present value, also called actuarial present value. Unlike an ordinary present value, it also weights each future cash flow by the probability that the triggering event (survival or death) actually occurs at that time.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 407
+  },
+  {
+    "front": "What is a net premium?",
+    "back": "A net premium is a premium calculated using only mortality and interest assumptions, with no allowance for the insurer's expenses. It is the theoretical premium found by applying the equivalence principle.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 408
+  },
+  {
+    "front": "Write the formula for the annual net premium of a whole life insurance of 1, P_x.",
+    "back": "P_x = A_x / \u00e4_x, where A_x is the EPV of the whole life benefit and \u00e4_x is the EPV of a level annuity-due of 1 paid while the insured survives.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 409
+  },
+  {
+    "front": "Why does the equivalence principle divide the benefit EPV by an annuity value to get the premium?",
+    "back": "The annuity value \u00e4_x represents the EPV of a stream of 1 per year while the insured survives. Dividing the total benefit EPV by this stream converts a single lump-sum present value into the level periodic premium that produces the same present value.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 410
+  },
+  {
+    "front": "Write the net annual premium formula for an n-year term insurance.",
+    "back": "P = A^1_{x:n} / \u00e4_{x:n}, where A^1_{x:n} is the EPV of the death benefit if death occurs within n years, and \u00e4_{x:n} is the EPV of premiums paid for at most n years.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 411
+  },
+  {
+    "front": "Write the net annual premium formula for an n-year endowment insurance.",
+    "back": "P = A_{x:n} / \u00e4_{x:n}, where A_{x:n} is the EPV of the combined benefit paid on death within n years or on survival to the end of n years, whichever occurs first.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 412
+  },
+  {
+    "front": "In endowment insurance notation, what is the difference between A_{x:n} and A^1_{x:n}?",
+    "back": "A_{x:n} includes both the death benefit and the survival benefit (the endowment benefit). A^1_{x:n} with the small 1 refers only to the death benefit portion, paid only if death occurs within the n years.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 413
+  },
+  {
+    "front": "A whole life policy has A_x = 0.25 and \u00e4_x = 12.5 for a face amount of 1000. Find the annual net premium.",
+    "back": "P_x = A_x / \u00e4_x = 0.25 / 12.5 = 0.02 per unit of face amount. For a face amount of 1000, the annual net premium is 1000 times 0.02, which equals 20.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 414
+  },
+  {
+    "front": "Why is the term insurance annuity \u00e4_{x:n} limited to n years even though the insured might live much longer?",
+    "back": "Because premiums for a term policy stop being collected once the term ends. Even if the insured survives past year n, no further premiums are due, so the premium annuity only counts payments for the term period.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 415
+  },
+  {
+    "front": "What is a gross premium?",
+    "back": "A gross premium is the premium actually charged to a policyholder. Unlike a net premium, it also includes a loading to cover the insurer's expenses, such as commissions, underwriting, and administration.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 416
+  },
+  {
+    "front": "Write the equivalence principle equation used to solve for a gross premium.",
+    "back": "EPV[gross premiums] = EPV[benefits] + EPV[expenses]. The benefit side of the balance is expanded to include the present value of all expected future expenses.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 417
+  },
+  {
+    "front": "Name the three common ways an expense can be modeled in a gross premium calculation.",
+    "back": "A percent-of-premium expense, which scales with the premium charged, a per-policy expense, a flat amount regardless of policy size, and a per-1000-of-face expense, which scales with the death benefit amount.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 418
+  },
+  {
+    "front": "What kind of insurer expense is usually modeled as a one-time cost at issue rather than a recurring cost?",
+    "back": "Underwriting and policy issue costs are typically one-time expenses incurred only at the moment the policy is issued, unlike per-policy administration expenses which recur every year the policy stays in force.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 419
+  },
+  {
+    "front": "A whole life policy (face 1000, A_x = 0.25, \u00e4_x = 12.5) has expenses of 10 percent of premium, 2 per year flat, and a one-time issue expense of 25. Set up the gross premium equation.",
+    "back": "G * \u00e4_x = (1000 * A_x) + (0.10 * G * \u00e4_x) + (2 * \u00e4_x) + 25, which becomes G * 12.5 = 250 + 1.25G + 25 + 25.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 420
+  },
+  {
+    "front": "Solve for G in: G * 12.5 = 250 + 1.25G + 25 + 25.",
+    "back": "Collect the G terms: G*(12.5 minus 1.25) = 300, so G*11.25 = 300, giving G = 300/11.25 = 26.67.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 421
+  },
+  {
+    "front": "In the gross premium example where the net premium was 20 and the gross premium was 26.67, what explains the difference?",
+    "back": "The difference of 6.67 is entirely due to the expense loading: the percent-of-premium charge, the flat per-policy expense, and the one-time issue expense, none of which appear in the net premium calculation.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 422
+  },
+  {
+    "front": "Why does a percent-of-premium expense make the gross premium equation harder to solve directly than a flat expense?",
+    "back": "Because the unknown gross premium G appears on both sides of the equation (once as the premium itself and once inside the expense term), so the G terms must be collected and combined before solving, rather than solving in one step.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 423
+  },
+  {
+    "front": "What is a policy value, and what was it historically called?",
+    "back": "A policy value, historically called a reserve, is the amount of money an insurer needs to hold at a given point after issue so it can meet its future obligations on that policy.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 424
+  },
+  {
+    "front": "Why is a policy value needed even though the policyholder pays a level premium every year?",
+    "back": "Because the true cost of insurance rises every year as the insured ages, while the premium stays level. Early premiums collect more than that year's true cost and build up a fund; later premiums collect less, and the fund built up earlier is drawn down to cover the shortfall.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 425
+  },
+  {
+    "front": "What is the policy value at time zero, immediately at issue, and why?",
+    "back": "The policy value at time zero is zero. This follows directly from the equivalence principle, since the EPV of premiums exactly equals the EPV of benefits at issue, leaving nothing left over.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 426
+  },
+  {
+    "front": "What does the notation tV_x mean?",
+    "back": "tV_x is the policy value at duration t for a policy issued to a life aged x, representing the fund the insurer holds on that policy at that point in time.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 427
+  },
+  {
+    "front": "Describe the prospective method for calculating a policy value in plain words.",
+    "back": "The prospective method looks forward from the valuation date and asks what the insurer still expects to pay out in future benefits, minus what it still expects to collect in future premiums, given the policy is in force.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 428
+  },
+  {
+    "front": "Write the prospective policy value formula for whole life insurance at duration t.",
+    "back": "tV_x = A_{x+t} minus (P_x * \u00e4_{x+t}), where both A_{x+t} and \u00e4_{x+t} are valued at the insured's attained age of x+t.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 429
+  },
+  {
+    "front": "In the prospective policy value formula, why is the attained age x+t used instead of the original issue age x?",
+    "back": "Because the calculation is being done at duration t, and the future benefits and premiums must be valued based on the insured's current age at that time, which is x+t, not the age at original issue.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 430
+  },
+  {
+    "front": "Describe the retrospective method for calculating a policy value in plain words.",
+    "back": "The retrospective method looks backward and asks how much money has accumulated so far, from past premiums collected minus past benefits and costs paid out, carried forward with interest, per policy still in force.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 431
+  },
+  {
+    "front": "Why must the prospective and retrospective policy values be equal at the same duration?",
+    "back": "Because the equivalence principle guarantees that premiums and benefits balance exactly over the whole lifetime of the policy, so the same underlying fund must be described whether it is measured by looking forward or by looking backward, as long as the same assumptions are used both ways.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 432
+  },
+  {
+    "front": "In a retrospective calculation, why is the accumulated fund divided by the probability of survival to that duration?",
+    "back": "The accumulated fund is first computed per original policy issued. Dividing by the survival probability re-expresses that fund per policy still in force, since only survivors are holding a policy value at that point.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 433
+  },
+  {
+    "front": "A 3-year term insurance of 1000 has q_x = 0.01, i = 5 percent, and a net annual premium of 11.35. Find the retrospective fund per original policy after year 1, before dividing by survivorship.",
+    "back": "Accumulate the premium with interest: 11.35 * 1.05 = 11.92. Subtract the expected cost of claims in year 1: 0.01 * 1000 = 10. The fund per original policy is 11.92 minus 10 = 1.92.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 434
+  },
+  {
+    "front": "Continuing the prior example, with p_x = 0.99, find the retrospective policy value per surviving policy at duration 1.",
+    "back": "Divide the accumulated fund of 1.92 by the survival probability 0.99: 1.92 / 0.99 = 1.94, which matches the prospective value at duration 1 within rounding.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 435
+  },
+  {
+    "front": "For the same 3-year term insurance, the prospective future benefit EPV at duration 1 is 23.98 and the future premium EPV is 22.03. Find the prospective policy value at duration 1.",
+    "back": "1V = 23.98 minus 22.03 = 1.95, which matches the retrospective value of 1.94 within ordinary rounding tolerance.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 436
+  },
+  {
+    "front": "What assumptions must match for the prospective and retrospective policy values to agree exactly?",
+    "back": "Both methods must use the same mortality assumptions, the same interest assumption, and the same premium, since any difference in assumptions between the two views would break the balance guaranteed by the equivalence principle.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 437
+  },
+  {
+    "front": "Write the general recursive relation for policy values from duration t to duration t+1.",
+    "back": "(tV + P) * (1+i) = (q_{x+t} * benefit) + (p_{x+t} * (t+1)V), meaning the policy value plus the premium, accumulated with one year of interest, funds the expected claim cost plus the expected policy value carried forward for survivors.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 438
+  },
+  {
+    "front": "Rearrange the recursive relation to solve for the policy value one year later, (t+1)V.",
+    "back": "(t+1)V = [(tV + P) * (1+i) minus (q_{x+t} * benefit)] / p_{x+t}",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 439
+  },
+  {
+    "front": "In the recursive formula, why is the sum (tV + P) accumulated with interest before subtracting the cost of claims?",
+    "back": "Because the existing policy value and the new premium are both available at the start of the year and earn one full year of interest together before any claims are paid at the end of the year, so both amounts must be added and accumulated together first.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 440
+  },
+  {
+    "front": "For a 3-year term insurance with 1V = 1.94, P = 11.35, i = 5 percent, q_{x+1} = 0.012, and p_{x+1} = 0.988, find 2V using the recursion.",
+    "back": "Accumulate: (1.94+11.35)*1.05 = 13.9545. Subtract the claim cost: 13.9545 minus (0.012*1000) = 1.9545. Divide by survival probability: 1.9545/0.988 = 1.98.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 441
+  },
+  {
+    "front": "Why is the recursive relation often faster than the prospective method on an exam question?",
+    "back": "Because if a policy value at one duration is already known, the recursion moves it forward by one year using only the mortality, interest, and premium for that single year, avoiding the need to recompute a full multi-year prospective actuarial present value from scratch.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 442
+  },
+  {
+    "front": "For a term insurance, what must the policy value equal at the exact end of the term, and why?",
+    "back": "The policy value must equal zero at the end of the term, since the coverage ends with no further benefit possible and no further premiums due, so nothing remains to be held.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 443
+  },
+  {
+    "front": "What is the net amount at risk in the context of a policy value recursion?",
+    "back": "The net amount at risk is the difference between the death benefit and the policy value already held (benefit minus tV). It represents the true fresh loss to the insurer if death occurs, since the policy value itself would already have been available.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 444
+  },
+  {
+    "front": "What is Thiele's differential equation the continuous-time analogue of?",
+    "back": "Thiele's differential equation is the continuous-time analogue of the discrete recursive relation for policy values, used when premiums are paid continuously and mortality is described by a force of mortality rather than an annual probability.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 445
+  },
+  {
+    "front": "Write Thiele's differential equation for a policy with continuous premium rate P(t) and death benefit S(t).",
+    "back": "d/dt[tV] = (delta * tV) + P(t) minus [mu_{x+t} * (S(t) minus tV)], where delta is the force of interest and mu_{x+t} is the force of mortality at attained age x+t.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 446
+  },
+  {
+    "front": "In Thiele's differential equation, what does the term delta times tV represent?",
+    "back": "It represents the interest that the existing policy value earns continuously, where delta is the force of interest, the continuous-time analogue of the annual interest rate i.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 447
+  },
+  {
+    "front": "In Thiele's differential equation, what does the term P(t) represent?",
+    "back": "P(t) is the continuous rate at which premium income is flowing into the policy value fund at time t.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 448
+  },
+  {
+    "front": "In Thiele's differential equation, what does mu_{x+t} times (S(t) minus tV) represent?",
+    "back": "It represents the expected instantaneous cost of the mortality risk the insurer is still carrying, equal to the force of mortality times the net amount at risk, which is the death benefit minus the policy value already held.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 449
+  },
+  {
+    "front": "In plain words, what does Thiele's differential equation say about how the policy value changes over time?",
+    "back": "The policy value grows through interest earned and premium income coming in, and shrinks through the expected cost of the mortality risk that is not already covered by the fund already on hand.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 450
+  },
+  {
+    "front": "Why is Thiele's differential equation usually tested at a conceptual level rather than through numeric integration on the exam?",
+    "back": "Because understanding what each term in the equation represents in words (interest earned, premium income, and the cost of the uncovered mortality risk) is generally more valuable for answering exam questions than performing the calculus needed to solve the differential equation directly.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 451
+  },
+  {
+    "front": "What is the net amount at risk used for in Thiele's equation, and why does it use (S(t) minus tV) instead of just S(t)?",
+    "back": "It measures the true fresh loss to the insurer on death, because the policy value tV would already have been available as a fund to help pay the claim, so only the excess of the benefit over that fund represents new risk to the insurer.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 452
+  },
+  {
+    "front": "What is the single most common exam trap when applying the recursive policy value formula?",
+    "back": "Mixing up the direction of the recursion, especially forgetting that the existing policy value and the premium just paid must both be included and accumulated with one year of interest before subtracting the expected claim cost.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 453
+  },
+  {
+    "front": "What is the single most common exam trap when choosing between a net premium formula and a gross premium formula?",
+    "back": "Applying a net premium formula to a question that clearly describes expense-loaded, gross premiums, or the reverse; carefully identifying which cash flows belong on which side of the equivalence principle avoids this error.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 454
+  },
+  {
+    "front": "Why is Premium and Policy Value Calculation typically the highest-weighted single topic on the FAM exam?",
+    "back": "Because nearly every calculation-heavy question on the exam reduces to setting up the equivalence principle, computing a prospective or retrospective policy value, or stepping a policy value forward with the recursive relation, making it the most heavily and consistently tested domain.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 455
+  },
+  {
+    "front": "For an n-year endowment insurance, why does the annuity in the premium formula run only for the term of the policy, \u00e4_{x:n}, rather than for life?",
+    "back": "Because the endowment policy itself only lasts n years, ending either in death or survival to duration n, so no premiums are ever due beyond that point regardless of the annuity's underlying life table.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 456
+  },
+  {
+    "front": "If A_x increases while \u00e4_x stays the same, what happens to the net annual premium P_x, and why?",
+    "back": "P_x increases, because P_x = A_x / \u00e4_x, so a larger EPV of benefits with the same premium annuity value requires a larger annual premium to keep the equivalence principle balanced.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 457
+  },
+  {
+    "front": "If \u00e4_x increases while A_x stays the same, what happens to the net annual premium P_x, and why?",
+    "back": "P_x decreases, because the same total benefit EPV is now being spread over a larger annuity value, meaning a smaller level premium is enough to accumulate the same present value.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 458
+  },
+  {
+    "front": "What does it mean, in terms of the equivalence principle, for a premium to be described as 'expense-loaded'?",
+    "back": "It means the premium has been calculated so that its EPV covers not just the EPV of the insurance benefit, but also the EPV of the insurer's expenses, as opposed to a net premium which covers only the benefit.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 459
+  },
+  {
+    "front": "In the gross premium worked example, what would happen to the gross premium if the one-time issue expense of 25 were removed but everything else stayed the same?",
+    "back": "The equation would become G*12.5 = 250 + 1.25G + 25, so G*11.25 = 275, giving G = 275/11.25 = 24.44, a lower gross premium than the 26.67 found with the issue expense included.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 460
+  },
+  {
+    "front": "Why does a per-policy expense affect a small policy proportionally more than a large policy?",
+    "back": "Because a per-policy expense is a flat dollar amount regardless of face amount, so for a small face amount it represents a larger share of the total premium than it does for a large face amount, where the same flat cost is spread over more coverage.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 461
+  },
+  {
+    "front": "What is the purpose of setting the policy value at issue equal to zero when deriving the recursive formula for the very first year?",
+    "back": "Setting 0V equal to zero reflects that the equivalence principle already balanced premiums and benefits exactly at issue, so there is no leftover fund, and the recursion for the first policy year begins from that zero starting point.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 462
+  },
+  {
+    "front": "Explain in one sentence why the prospective policy value formula subtracts a premium annuity term rather than adding it.",
+    "back": "Because future premiums are money the insurer still expects to receive and can use to offset future benefit costs, so they reduce the amount of fund the insurer needs to be holding right now.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 463
+  },
+  {
+    "front": "What actuarial function represents the EPV of a level annuity-due of 1 paid annually while a life aged x survives?",
+    "back": "\u00e4_x, read as 'a-double-dot sub x', is the actuarial present value of an annuity-due of 1 per year paid at the start of each year while the insured is alive.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 464
+  },
+  {
+    "front": "What actuarial function represents the EPV of a whole life insurance benefit of 1 on a life aged x?",
+    "back": "A_x is the actuarial present value of a whole life insurance of 1, payable whenever the insured eventually dies, however far in the future that occurs.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 465
+  },
+  {
+    "front": "In the notation A^1_{x:n}, what does the superscript 1 above the A indicate?",
+    "back": "It indicates that the benefit is a death benefit contingent on death occurring within the n-year term, as opposed to a survival or endowment benefit.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 466
+  },
+  {
+    "front": "Describe, in one sentence, the balance-scale picture of the equivalence principle.",
+    "back": "One side of the scale holds all future premium payments weighted by survival probability and discounted to today, the other side holds all future benefit payments weighted by the probability of the triggering event and discounted to today, and the equivalence principle sets these two sides equal at issue.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 467
+  },
+  {
+    "front": "Why is a net premium sometimes called an 'equivalence premium'?",
+    "back": "Because it is the premium that results directly from solving the equivalence principle equation, EPV[premiums] equals EPV[benefits], with no additional loading for expenses.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 468
+  },
+  {
+    "front": "For a 3-year term insurance, why is the EPV of the death benefit built from three separate terms, one for each policy year?",
+    "back": "Because death can occur in year 1, year 2, or year 3, and each possibility requires its own discount factor and its own probability of surviving to the start of that year and then dying during it, so each year's contribution must be calculated and summed separately.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 469
+  },
+  {
+    "front": "In the 3-year term insurance example, why does the term for death in year 3 include both p_x and p_{x+1} in its probability factor?",
+    "back": "Because to die during year 3, the insured must first survive year 1 (probability p_x) and survive year 2 (probability p_{x+1}), and only then die during year 3, so both survival probabilities must be multiplied together with the year-3 mortality rate.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 470
+  },
+  {
+    "front": "What role does the discount factor v play in each term of a death benefit EPV calculation?",
+    "back": "The discount factor v, raised to the power of the number of years until the benefit could be paid, converts a benefit paid at a future point in time back into its equivalent value in today's dollars.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 471
+  },
+  {
+    "front": "Why must a policy value calculation for a term insurance eventually reach zero, while a whole life policy value never reaches zero while the insured is alive?",
+    "back": "A term insurance ends after a fixed number of years with no further obligation, so its policy value winds down to zero by the end of the term, while a whole life policy continues indefinitely as long as the insured is alive, so its policy value does not have a natural endpoint before death.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 472
+  },
+  {
+    "front": "If a recursive policy value calculation produces a negative policy value, what should that suggest to the solver?",
+    "back": "It should prompt a check of the inputs and arithmetic, since for a standard level-premium policy without unusual loading, the policy value is not normally expected to become negative; a negative result often signals an error in setting up the recursion or in the given assumptions.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 473
+  },
+  {
+    "front": "In the equivalence principle equation for a gross premium, why does the expense term for a percent-of-premium charge use G rather than the net premium P?",
+    "back": "Because a percent-of-premium expense is defined as a percentage of whatever premium the policyholder actually pays, which is the gross premium G, not the theoretical net premium P that ignores expenses.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 474
+  },
+  {
+    "front": "What is the practical business reason an insurer needs to hold a policy value rather than simply spending each year's premium as it is collected?",
+    "back": "Because premiums are level while the true cost of insurance rises with age, so the insurer must set aside the excess collected in early years in order to have enough funds available to pay the larger expected claim costs in later years.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 475
+  },
+  {
+    "front": "Fill in the blank: the policy value 'building up' picture shows the prospective view starting from the ______ and moving backward in time to meet the retrospective view.",
+    "back": "future (or: end of the policy). The prospective view calculates the fund's expected size by working from future benefits and premiums backward to the valuation date, meeting the retrospective view, which works forward from issue, at the same point.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 476
+  },
+  {
+    "front": "Why is it important that the recursive formula uses p_{x+t} and q_{x+t}, the mortality rates at the CURRENT attained age, rather than the original issue-age rates?",
+    "back": "Because the recursion is stepping the policy value forward one specific policy year at a time, and the correct mortality experience for that year is based on how old the insured actually is at that point, which is the attained age x+t, not the original age at issue.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 477
+  },
+  {
+    "front": "In the equivalence principle, if benefits are paid at the end of the year of death, what timing convention should be used for the discount factor applied to each year's death benefit?",
+    "back": "The death benefit for deaths in year k should be discounted by v^k, since the benefit is not paid until the end of the k-th policy year, even though death itself may occur at any point during that year.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 478
+  },
+  {
+    "front": "What is the effect on the net premium if a whole life policy is instead written as an n-year term policy with the same mortality and interest assumptions, all else equal?",
+    "back": "The term insurance premium is generally lower per unit of coverage during the term than the level whole life premium, because the term policy only pays a benefit if death occurs within the limited period and does not need to fund the higher costs of insurance at very advanced ages.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 479
+  },
+  {
+    "front": "In a policy value recursion, what does it mean if p_{x+t} appears in the denominator when solving for (t+1)V?",
+    "back": "It means the calculated cash flow is being spread only over the policies that actually survive to duration t+1, since only survivors will be holding that next policy value, so dividing by the survival probability correctly reallocates the amount per surviving policyholder.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 480
+  },
+  {
+    "front": "Why does an endowment insurance typically have a much larger net premium than an otherwise identical term insurance?",
+    "back": "Because an endowment insurance guarantees a payout even if the insured survives to the end of the term, adding a savings-like survival benefit on top of the death benefit, which substantially raises the EPV of benefits that the premium must fund.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 481
+  },
+  {
+    "front": "What two actuarial present values must be computed before applying the formula P_x = A_x / \u00e4_x?",
+    "back": "The EPV of the whole life insurance benefit, A_x, and the EPV of the level premium annuity-due, \u00e4_x, both of which are typically taken from or derived using a life table and an assumed interest rate.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 482
+  },
+  {
+    "front": "Why is the equivalence principle applied only ONCE, at the moment of issue, rather than being re-applied every policy year?",
+    "back": "Because the level premium and the benefit structure are fixed at issue based on the balance achieved at that single point in time; the policy value at later durations then measures how that original balance is playing out, rather than resetting the balance each year.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 483
+  },
+  {
+    "front": "What is the plain-English meaning of the phrase 'expected present value' as used throughout this chapter?",
+    "back": "It means the present value of a future cash flow after being multiplied by the probability that the event triggering that cash flow (such as survival to a certain year or death in a certain year) actually happens.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 484
+  },
+  {
+    "front": "In Thiele's differential equation, why is the term for mortality cost subtracted rather than added?",
+    "back": "Because the expected cost of the mortality risk represents an outflow that reduces the policy value fund, offsetting the inflows from interest earned and premium income, so it must be subtracted to correctly describe the net rate of change of the fund.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 485
+  },
+  {
+    "front": "How does the concept of a policy value connect the equivalence principle at issue to the ongoing life of a policy?",
+    "back": "The equivalence principle guarantees the premiums and benefits balance exactly at issue with a starting policy value of zero; the policy value at every later duration then tracks how that original balance has evolved as some policyholders have died, some have survived, and interest has accrued.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 486
+  },
+  {
+    "front": "What common exam phrasing signals that a question wants the retrospective method rather than the prospective method?",
+    "back": "Phrasing that describes what has already happened on the policy, such as premiums already collected or claims already paid up to the current duration, signals a retrospective calculation, as opposed to phrasing describing what remains to happen in the future, which signals a prospective calculation.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 487
+  },
+  {
+    "front": "Why can the recursive relation be used to check a prospective or retrospective calculation for consistency?",
+    "back": "Because if the policy value at one duration and the assumptions for the following year are known, the recursive formula predicts the next duration's policy value; if this predicted value does not match a value found by prospective or retrospective calculation, it signals an arithmetic or assumption error somewhere.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 488
+  },
+  {
+    "front": "What is the net amount at risk formula, and where does it appear outside of Thiele's equation?",
+    "back": "The net amount at risk equals the death benefit minus the policy value already held (benefit minus tV). The same quantity, in discrete form, is what makes each year's expected claim cost only partially offset the fund already being carried forward for survivors in the yearly recursive relation.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 489
+  },
+  {
+    "front": "Why is it necessary to state both an interest assumption and a mortality assumption before any net premium or policy value can be calculated?",
+    "back": "Because every actuarial present value combines a discounting effect from interest and a probability-weighting effect from mortality; without both assumptions specified, neither the benefit side nor the premium side of the equivalence principle can be evaluated.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 490
+  },
+  {
+    "front": "In the worked 3-year term insurance example, why does the annuity \u00e4 (for premiums) have one fewer year of mortality decrement built in than the full 3-year insurance benefit?",
+    "back": "Because the annuity pays at the START of each year while the policy is in force, so the third payment (at the start of year 3) only requires survival through the first two years, whereas the insurance benefit calculation must account for death occurring in any of all three years, including the third.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 491
+  },
+  {
+    "front": "What is the key difference between how 'per-policy' and 'per-1000-of-face' expenses scale with policy size?",
+    "back": "A per-policy expense is a fixed dollar amount that does not change no matter how large or small the face amount is, while a per-1000-of-face expense increases proportionally as the face amount increases, since it is charged per unit of coverage rather than per policy.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 492
+  },
+  {
+    "front": "Why would an actuary want to verify a computed policy value using BOTH the prospective and retrospective methods rather than only one?",
+    "back": "Computing both provides an independent cross-check: if the equivalence principle assumptions were applied consistently and correctly, the two methods must produce the same answer, so agreement between them confirms the calculation, while a mismatch reveals an error.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 493
+  },
+  {
+    "front": "What does the force of interest, delta, represent in Thiele's differential equation, and how does it relate to the annual interest rate i used elsewhere in this chapter?",
+    "back": "The force of interest delta is the continuous, instantaneous rate at which money grows, used in continuous-time models like Thiele's equation, while the annual interest rate i is the discrete, once-per-year growth rate used in the recursive formula and annuity calculations; they describe the same underlying interest earning process at different time granularities.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 494
+  },
+  {
+    "front": "Summarize, in one sentence, what makes the equivalence principle 'work' as a fair basis for setting a premium.",
+    "back": "It works because it sets the premium at exactly the level where the value the policyholder expects to pay in, given realistic survival probabilities, equals the value the insurer expects to pay out, given the same probabilities, leaving no built-in advantage to either side before any expenses are considered.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 495
+  },
+  {
+    "front": "For a whole life policy, does the policy value tV_x generally increase, decrease, or stay level as duration t increases toward very old age?",
+    "back": "The policy value generally increases toward the face amount as duration increases, since the insured is aging and the probability of imminent death is rising, so the fund needed to cover the now-nearer expected claim grows steadily larger.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 496
+  },
+  {
+    "front": "In a recursive policy value step, what happens to (t+1)V if the assumed mortality rate q_{x+t} is understated?",
+    "back": "If q_{x+t} is understated, too little is subtracted for the expected claim cost, which makes the computed (t+1)V come out too high relative to the value that would result from the correct mortality rate.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 497
+  },
+  {
+    "front": "Why does the gross premium equation in this chapter place the one-time issue expense of 25 outside of any multiplication by \u00e4_x?",
+    "back": "Because the issue expense is a single cost incurred only once, at time zero when the policy begins, rather than a recurring annual cost, so it is added directly rather than being multiplied by an annuity value that spreads a cost over multiple years.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 498
+  },
+  {
+    "front": "What is the relationship between the net premium P_x and the pure cost of insurance in the very first policy year, in plain terms?",
+    "back": "In the first year the level net premium P_x typically exceeds the pure cost of insuring the current year's mortality risk, and this excess is what begins building the policy value fund that will be needed to cover the higher costs of insurance in later years.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 499
+  },
+  {
+    "front": "Why is it misleading to think of a policy value as money the policyholder personally 'owns' the way a bank savings balance would work?",
+    "back": "Because the policy value is a pooled actuarial fund calculated across a whole cohort of similar policies using survival probabilities; it represents the amount the insurer needs to be holding on average per in-force policy, not a literal individual savings account belonging to one specific policyholder.",
+    "domain": "premium_and_policy_value_calculation",
+    "id": 500
+  }
+]
